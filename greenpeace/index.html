@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js/swiper-bundle.min.js"></script> <!--swiper 라이브러리 js 호출-->
+    <script src="js/jquery-3.7.1.min.js"></script> <!--jquery(라이브러리) js 호출-->
+    <script src="js/main.js"></script> <!--javascript 호출-->
+    <script src="js/common.js"></script> <!--javascript 호출-->
+    <script src="js/gsap.min.js"></script> <!--아코디언 라이브러리 js 호출-->
+    <script src="js/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css"> <!--swiper 라이브러리 css (내 css보다 위에 배치 : 그래야 내가 css를 변경할 수 있음)-->
+    <link rel="stylesheet" href="css/main.css"> <!--css 호출-->
+
+    <link rel="shortcut icon" type="image/x-icoon" href="favicon.svg">
+    <title>GREENPEACE</title>
+</head>
+<body>
+    <div class="skipnav">
+        <a class="cnt" href="#skip_content">본문 바로가기</a> <!--내부링크-->
+        <a class="menu" href="#skip_nav">주메뉴 바로가기</a>
+
+    </div>
+    <div id="wrap">
+        <header>
+            <!-- (pc일때) 메뉴에 마우스를 오버하면 menu_pc 클래스 추가 
+            (모바일일때) 1차메뉴를 클릭하면 menu_mo 클래스 추가
+            -->
+            <h1 class="logo"><a href="index.html">GREENPEACE</a></h1>
+            <nav class="gnb" id="skip_nav">
+                <a href="#n" class="search_mo">검색</a>
+                <button class="gnb_open">메뉴열기</button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <!-- pc버전에서 마우스를 오버하면 over 클래스 추가
+                                모바일 버전에서 클릭하면 open 클래스 추가 -->
+                        <li class="open">
+                            <a href="#n"><span>재단 소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>개요</span></a></li>
+                                <li><a href="#n"><span>미션</span></a></li>
+                                <li><a href="#n"><span>행동방식</span></a></li>
+                                <li><a href="#n"><span>보고서</span></a></li>
+                                <li><a href="#n"><span>사람들</span></a></li>
+                                <li><a href="#n"><span>앰버서더</span></a></li>
+                                <li><a href="#n"><span>인재채용</span></a></li>
+                                <li><a href="#n"><span>연락처</span></a></li>
+                                <li><a href="#n"><span>자주 하는 질문</span></a></li>
+                                <li><a href="#n"><span>재정 보고서</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>캠페인</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>해양</span></a></li>
+                                <li><a href="#n"><span>건강</span></a></li>
+                                <li><a href="#n"><span>기후</span></a></li>
+                                <li><a href="#n"><span>산림</span></a></li>
+                                <li><a href="#n"><span>플라스틱</span></a></li>
+                                <li><a href="#n"><span>북극</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="has3">
+                            <a href="#n"><span>후원/참여</span></a>
+                            <ul class="depth2">
+                                <li>
+                                    <a href="#n"><span>후원하기</span></a>
+                                    <ul class="depth3">
+                                        <li><a href="#n"><span>지구 살리기</span></a></li>
+                                        <li><a href="#n"><span>플라스틱 제로</span></a></li>
+                                        <li><a href="#n"><span>산림보호구역</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n"><span>청원하기</span></a>
+                                    <ul class="depth3">
+                                        <li><a href="#n"><span>플라스틱 생산 절감</span></a></li>
+                                        <li><a href="#n"><span>바다 동물 보호</span></a></li>
+                                        <li><a href="#n"><span>기후위기</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n"><span>참여하기</span></a>
+                                    <ul class="depth3">
+                                        <li><a href="#n"><span>자원봉사자 모집</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>소식/뉴스룸</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>최근소식</span></a></li>
+                                <li><a href="#n"><span>뉴스룸</span></a></li>
+                                <li><a href="#n"><span>미디어 라이브러리</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav><!--gnb-->
+            <div class="tnb">
+                <a href="#n" class="search">검색</a>
+                <a href="#n" class="login">로그인</a>
+                <a href="#n" class="support">후원하기</a>
+            </div><!--tnb-->
+        </header>
+        <main class="container">
+            <section class="visual" id="skip_content">
+                <h2>동영상</h2>
+                    <div class="video_area" data-status="before">
+                        <!-- 비디오가 스크롤될 영역의 높이를 줌. 계속 상태를 업데이트 해야 해서 class로 주기보다 data로 주는게 나음.
+                                처음에 고정되기 이전   before
+                                고정되었을때          fixed
+                                고정 이후             after
+                        -->
+                        <div class="video_wrap">
+                            <div class="video_inner">
+                                <video autoplay muted loop playsinline>
+                                    <source src="images/greenpeace_visual.mp4" type="video/mp4">
+                                </video>
+                                <div class="video_txt">
+                                    <h3>그린피스,</h3>
+                                    <strong>행동을 통한 긍정적인 변화</strong>
+                                </div><!--video_txt-->
+                                <p>: 전 지구적인 환경문제의 원인을 밝혀내고, 이를 해결하기 위해 평화적이고 창의적인 방식으로 활동하는 캠페인 단체</p>
+                            </div><!--video_inner-->
+                        </div><!--video_wrap-->
+                    </div><!--video_area-->
+            </section><!--visual-->
+            <section class="value">
+                <div class="wrapper">
+                    <div class="title_txt">
+                        <strong>Values</strong>
+                        <h2>그린피스의 핵심가치</h2>
+                        <p>그린피스의 행동을 통한 긍정적인 변화 소식을 전합니다.</p>
+                    </div><!--title_txt-->
+                    <ul>
+                        <li>
+                            <h3>해결책</h3>
+                            <p>연구와 조사 활동을 통해 건강한 지구를 만들기 위한 해결책을 제시합니다.</p>
+                        </li>
+                        <li>
+                            <h3>독립성</h3>
+                            <p>독립성을 유지하기 위해 오로지 개인 및 독립재단의 후원으로만 운영됩니다.</p>
+                        </li>
+                        <li>
+                            <h3>글로벌</h3>
+                            <p>초국가적 환경문제에 대응하고 범세계적인 지식과 자원을 활용합니다.</p>
+                        </li>
+                        <li>
+                            <h3>비폭력</h3>
+                            <p>양심에 기반한 행동을 하며, 모든 활동은 평화적 방식으로 이루어집니다.</p>
+                        </li>   
+                    </ul>
+                </div><!--wrapper-->
+            </section><!--value-->
+            <section class="campaign">
+                <div class="wrapper">
+                    <div class="title_txt">
+                        <strong>Campaign</strong>
+                        <h2>그린피스의 캠페인</h2>
+                        <p>그린피스에서 진행하는 지역 및 글로벌 캠페인에 대해 자세히 알아보세요.</p>
+                    </div><!--title_txt-->
+                    <div class="cont_wrap">
+                        <div class="accordion_wrap">
+                            <div class="accordion"> 
+                                <div class="tit n01">해양 OCEANS</div>
+                                <div class="photo"><img src="images/campaign_img01.jpg" alt="바다 파도치는 사진"></div>
+                                <p>그린피스는 해양보호구역 지정을 요구합니다. 파괴적인 어업에 대항하고, <br>플라스틱 오염과 기후위기를 막기 위한 캠페인을 펼치며 바다를 보호하기 위해 활동하고 있습니다.</p>
+                            </div>
+                           <div class="accordion"> 
+                                <div class="tit n02">건강 HEALTH</div> 
+                                <div class="photo"><img src="images/campaign_img02.jpg" alt="바다 파도치는 사진"></div>
+                                <p>그린피스는 오염과 화학물질의 위험에서 우리와 미래 세대가 <br>깨끗한 공기를 마시고 자연을 만끽할 수 있도록 노력하고 있습니다.</p>
+                            </div>
+                        <!--
+                            <div class="accordion">
+                                <div class="tit n03">기후 CLIMATE</div> 
+                                <div class="photo"><img src="images/campaign_img03.jpg" alt="바다 파도치는 사진"></div>
+                                <p>그린피스는 기후위기를 막고 인류를 지키기 위해 재생에너지 전환을 위한 <br> 기후에너지 캠페인과 산림 보호 및 해양 보호 캠페인을 진행하고 있습니다.</p>
+                            </div>--> 
+                            <div class="accordion"> 
+                                <div class="tit n04">산림 FORESTS</div> 
+                                <div class="photo"><img src="images/campaign_img04.jpg" alt="바다 파도치는 사진"></div>
+                                <p>그린피스는 무분별한 벌채와 불법 채굴, 불법 목재 거래 등 산림 파괴를 막고 <br>전 세계의 숲을 지키기 위해 싸우고 있습니다.</p>
+                            </div>
+                        <!--    <div class="accordion">
+                                <div class="tit n05">플라스틱 PLASTICS</div> 
+                                <div class="photo"><img src="images/campaign_img05.jpg" alt="바다 파도치는 사진"></div>
+                                <p>그린피스는 플라스틱 문제의 근본부터 해결하기 위해,<br> 기업과 정부에 플라스틱 사용 규제와 정책 변화를 요구합니다.</p>
+                            </div>--> 
+                            <div class="accordion">
+                                <div class="tit n06">북극 ARCTIC</div> 
+                                <div class="photo"><img src="images/campaign_img06.jpg" alt="바다 파도치는 사진"></div>
+                                <p>그린피스는 화석연료에서 벗어나고, 석유 시추와 파괴적인 어업 또한 중단하도록 <br>극지방에 해양보호구역을 만들기 위한 캠페인을 진행하고 있습니다.</p>
+                            </div>
+                        </div>
+                        <div class="final"></div> <!-- 고정이 종료된 이후 콘텐츠에는 반드시 final이라는 클래스를 줘야함 -->
+                    </div>
+
+                </div><!--wrapper-->
+            </section><!--campaign-->
+            <section class="project">
+                <div class="wrapper">
+                    <div class="title_txt">
+                        <strong>Project</strong>
+                        <h2>그린피스의 프로젝트</h2>
+                        <p>그린피스는 국내는 물론 전 지구적 환경 문제에 대해 명확한 목표를 가지고 프로젝트를 진행합니다.</p>
+                    </div><!--title_txt-->
+                </div><!--wrapper-->
+                <div class="swiper">
+                    <ul class="swiper-wrapper"> 
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img01.jpg" alt="가뭄으로 땅이 갈라진 사진"></div>
+                                <div class="project_txt">
+                                    <span class="cli">기후</span>
+                                    <h3>기후재난 대응</h3>
+                                </div>
+                            </a>
+                        </li> 
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img02.jpg" alt="바다에 플라스틱이 떠다니는 사진"></div>
+                                <div class="project_txt">
+                                    <span class="oce">해양</span>
+                                    <h3>플라스틱 제로</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img03.jpg" alt="전자제품(핸드폰)이 폐기되는 사진"></div>
+                                <div class="project_txt">
+                                    <span class="heal">건강</span>
+                                    <h3>Rethink IT</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img04.jpg" alt="나노플라스틱이 들어있는 폼클렌징을 손에 짜놓은 사진"></div>
+                                <div class="project_txt">
+                                    <span class="pla">플라스틱</span>
+                                    <h3>마이 리틀 플라스틱</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img05.jpg" alt="인도네시아 우림 사진"></div>
+                                <div class="project_txt">
+                                    <span class="frs">산림</span>
+                                    <h3>인도네시아 우림보호</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img06.jpg" alt="북극곰 사진"></div>
+                                <div class="project_txt">
+                                    <span class="arc">북극</span>
+                                    <h3>북극보호</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img07.jpg" alt="바다 속 해양생물 사진"></div>
+                                <div class="project_txt">
+                                    <span class="cli">기후</span>
+                                    <h3>생물다양성</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img08.jpg" alt="사람이 아웃도어 옷을 입고 있는 사진"></div>
+                                <div class="project_txt">
+                                    <span class="heal">건강</span>
+                                    <h3>디톡스 아웃도어</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img09.jpg" alt="아마존 사진"></div>
+                                <div class="project_txt">
+                                    <span class="frs">산림</span>
+                                    <h3>아마존 보호</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img10.jpg" alt="북극에서 인터뷰하는 사진"></div>
+                                <div class="project_txt">
+                                    <span class="arc">북극</span>
+                                    <h3>극지방의 해양보호구역</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img11.jpg" alt="해안가 바위 위에 그물이 널려있는 사진"></div>
+                                <div class="project_txt">
+                                    <span class="oce">해양</span>
+                                    <h3>불법어업 근절</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/project_img12.jpg" alt="풍력발전소 사진"></div>
+                                <div class="project_txt">
+                                    <span class="cli">기후</span>
+                                    <h3>기업 100% 재생에너지 전환</h3>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--swiper-->
+            </section><!--project-->
+            <section class="support">
+                <div class="wrapper">
+                    <h2>당신이 살고 싶은 지구는 어떤 곳인가요?</h2>
+                    <div class="cont_wrap">
+                        <div class="swiper">
+                            <ul class="swiper-wrapper"> 
+                                <li class="swiper-slide"><a href="#n"><div class="photo"><img src="images/support_img01.jpg" alt="어린이들이 지구를 아스팔트에 분필로 그리고 있는 사진"></div></a></li> 
+                                <li class="swiper-slide"><a href="#n"><div class="photo"><img src="images/support_img02.jpg" alt="그린피스와 네이처앤유스가 함께 노르웨이 정부를 상대로 북극 바다의 석유 시추 허가 중단을 요구하는 사진"></div></a></li>
+                                <li class="swiper-slide"><a href="#n"><div class="photo"><img src="images/support_img03.jpg" alt="해안가 모래 바닥에 거북이 그림과 end plastic now!라고 써있는 현수막을 사람들이 들고 항공에서 찍은사진"></div></a></li>
+                                <li class="swiper-slide"><a href="#n"><div class="photo"><img src="images/support_img04.jpg" alt="홍수로 인해 길에 차가 엉겨 널브러져 있는 사진"></div></a></li>
+                                <li class="swiper-slide"><a href="#n"><div class="photo"><img src="images/support_img05.jpg" alt="아마존 강과 대서양의 물이 만나는 지점 사진"></div></a></li>
+                                <li class="swiper-slide"><a href="#n"><div class="photo"><img src="images/support_img06.jpg" alt="브라질 판타날 지역에서 발생한 산불 사진"></div></a></li>
+                                <li class="swiper-slide"><a href="#n"><div class="photo"><img src="images/support_img07.jpg" alt="대만의 연승어선 어부들이 잡은 상어 사진"></div></a></li>
+                                <li class="swiper-slide"><a href="#n"><div class="photo"><img src="images/support_img08.jpg" alt="아르헨티나 산티아고 델 에스테로 지방의 삼림 벌채 현장 사진"></div></a></li>
+                            </ul>
+                        </div><!--swiper-->
+                        <div class="cont_txt">
+                            <h3>그린피스가 만든 변화</h3>
+                            <p>그린피스는 지난 <span class="resize">50년</span> 동안 <span class="resize">6개</span> 대륙, <span class="resize">50개</span> 이상의 지역에서 활동하며 <br> <span class="underline">오직 개인 후원자의 후원금만으로</span> 지구를 위한 긍정적인 변화를 만들고 있습니다. </p>
+                            <p><span class="backcolor">당신의 소중한 후원</span>은 기후위기 문제를 해결하고 <br>취약 지역의 시민들과 동물, 자연을 지켜내는데 큰 힘이 됩니다.</p>
+                            <a href="#n"><span>후원하기</span></a>
+                        </div><!--cont_txt-->
+                    </div><!--cont_wrap-->
+                </div><!--wrapper-->
+            </section><!--support-->
+            <section class="news">
+                <div class="wrapper">
+                    <div class="title_txt">
+                        <strong>News & Report</strong>
+                        <h2>그린피스의 소식</h2>
+                        <p>그린피스의 행동을 통한 긍정적인 변화 소식을 전합니다.</p>
+                    </div><!--title_txt-->
+                    <div class="swiper">
+                        <ul class="swiper-wrapper"> 
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img01.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="frs">산림</span>
+                                        <h3>멸종 위기 코알라의 집을 지켜내다</h3>
+                                        <p>2024. 09. 26.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img02.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="heal">건강</span>
+                                        <h3>빵🍞 좋아하시나요?</h3>
+                                        <p>2024. 06. 26.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img03.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="oce">해양</span>
+                                        <h3>제주 바다를 지키는 해녀 이유정의 이야기를 들어보다</h3>
+                                        <p>2024. 05. 08.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img04.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="cli">기후</span>
+                                        <h3>강릉 산불 2년, 아직 끝나지 않은 재난</h3>
+                                        <p>2025. 01. 13.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img05.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="cli">기후</span>
+                                        <h3>그린피스 기후재난 퀴즈 챌린지 정답 공개 및 당첨자 발표</h3>
+                                        <p>2024. 10. 08.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img06.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="arc">북극</span>
+                                        <h3>그린란드에서 들려온 기쁜 소식! 북극 석유 탐사 중단 발표</h3>
+                                        <p>2024. 09. 26.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img07.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="oce">해양</span>
+                                        <h3>기후위기로부터 바다를 지킨 커다란 승리</h3>
+                                        <p>2024. 06. 26.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img08.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="pla">플라스틱</span>
+                                        <h3>지구가 건강하게 숨 쉴 때까지! 그린피스 플라스틱 캠페인이 만든..</h3>
+                                        <p>2024. 07. 23.</p>
+                                    </div>
+                                </a>
+                            </li> 
+                        </ul>
+                    </div><!--swiper-->
+                </div><!--wrapper-->
+            </section><!--news-->
+            <section class="subscribe">
+                <div class="wrapper">
+                    <div class="title_txt">
+                        <strong>Subscribe</strong>
+                        <h2>뉴스레터 구독하기</h2>
+                        <p>그린피스와 함께하는 소식을 놓치지 말고 만나보세요!</p>
+                    </div><!--title_txt-->
+                    <div class="cont_wrap">
+                        <form>
+                            <div class="input_box"><label for="name" class="input_tit">이름</label><input id="name" type="text" class="field"></div> <!-- for="name" id="name"는 짝꿍임. "" 안에 꼭 동일하게 줘야함.-->
+                            <div class="input_box"><label for="email" class="input_tit">이메일</label><input id="email" type="email" class="field"></div>
+                            <div class="check_box"><input id="checkbox" type="checkbox" class="check"><label for="checkbox" class="agree">(필수) 개인정보 수집 및 이용에 동의합니다.</label></div>
+                            <input type="submit" class="scb_btn" value="구독하기">
+                        </form>
+                    </div>
+                </div><!--wrapper-->
+                <div class="ai01"></div>
+                <div class="ai02"></div>
+                <div class="ai03"></div>
+            </section><!--subscribe-->
+        </main>
+        <footer>
+            <div class="wrapper">
+                <h2>사이트 정보</h2>
+                <div class="f_logo"><a href="index.html">GREENPEACE</a></div>
+                <div class="slogan">그린피스는 1971년 태어난 독립적인 국제환경단체로 <br>지구 환경보호와 평화를 위해 활동하고 있습니다.</div>
+                <div class="inner">
+                    <div class="f_info">
+                        <p class="fdn">재단법인 그린피스</p>
+                        <div class="group">
+                            <strong>대표자</strong>
+                            <span>남부원</span>
+                        </div>
+                        <div class="group">
+                            <strong>고유번호</strong>
+                            <span>105-82-21567</span>
+                        </div>
+                        <div class="group">
+                            <strong>주소</strong>
+                            <address>서울특별시 용산구 한강대로 257 6층</address>
+                        </div>
+                        <div class="group">
+                            <strong>Tel</strong>
+                            <span>02-3144-1994</span>
+                        </div>
+                        <div class="group">
+                            <strong>Email</strong>
+                            <span>greenpeace.kr@greenpeace.org</span>
+                        </div>
+                        <div class="group">
+                            <strong>Fax</strong>
+                            <span>02-6455-1995</span>
+                        </div>
+                    </div><!--f_info-->
+                    <div class="sns">
+                        <ul>
+                            <li class="insta"><a href="https://www.instagram.com/greenpeacekorea/"><span>인스타그램</span></a></li>
+                            <li class="youtube"><a href="https://www.youtube.com/greenpeacekorea"><span>유튜브</span></a></li>
+                            <li class="blog"><a href="https://blog.naver.com/greenpeace_korea"><span>블로그</span></a></li>
+                            <li class="xcom"><a href="https://x.com/greenpeacekorea"><span>트위터</span></a></li>
+                            <li class="facebook"><a href="https://www.facebook.com/greenpeacekorea"><span>페이스북</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="intl_site"><!-- international_site가 열리면 open 클래스가 추가 -->
+                        <button title="열기버튼">East Asia</button>
+                        <div class="list">
+                            <p>Greenpeace International</p>
+                            <ul>
+                                <li class="a_box">
+                                    <span>A</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org/africa/fr/">Africa | Français</a></li>
+                                        <li><a href="https://www.greenpeace.org/argentina/">Argentina | Español</a></li>
+                                        <li><a href="https://greenpeace.at/">Austria | Deutsch</a></li>
+                                    </ul>
+                                </li>
+                                <li class="b_box">
+                                    <span>B</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org/belgium/fr/">Belgium | Français</a></li>
+                                        <li><a href="https://www.greenpeace.org/brasil/">Brazil | Português</a></li>
+                                    </ul>
+                                </li>
+                                <li class="c_box">
+                                    <span>C</span>
+                                    <ul>
+                                        <li><a href="#n">Canada | Français</a></li>
+                                        <li><a href="#n">Croatia | Hrvatski</a></li>
+                                        <li><a href="#n">Czech Republic | Česky</a></li>
+                                    </ul>
+                                </li>
+                                <li class="d_box">
+                                    <span>D</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org/denmark/">Denmark | Dansk</a></li>
+                                    </ul>
+                                </li>
+                                <li class="e_box">
+                                    <span>E</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org.cn/">East Asia | 中文简体</a></li>
+                                        <li><a href="https://www.greenpeace.org/korea/">East Asia | 한국어</a></li>
+                                        <li><a href="https://www.greenpeace.org/eastasia/">East Asia | English</a></li>
+                                    </ul>
+                                </li>
+                                <li class="i_box">
+                                    <span>I</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org/india/en/">India | Hindi</a></li>
+                                        <li><a href="https://www.greenpeace.org/indonesia/">Indonesia | Indonesian</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!--intl_site-->
+                    <div class="f_nav">
+                        <ul>
+                            <li><a href="#n">개인정보보호정책</a></li>
+                            <li><a href="#n">이용약관</a></li>
+                            <li><a href="#n">저작권</a></li>
+                            <li><a href="#n">국세청</a></li>
+                            <li><a href="#n">행정안전부</a></li>
+                            <li><a href="#n">고유번호증</a></li>
+                        </ul>
+                    </div><!--f_nav-->
+                </div><!--inner-->
+            </div><!--wrapper-->
+        </footer>
+    </div><!--wrap-->
+</body>
+</html>
