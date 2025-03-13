@@ -1,0 +1,304 @@
+/* 포트폴리오 main.css */
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+
+body {
+    background-color: #F0F0F0;
+}
+.portfolio {
+    padding: 4em 0;
+    font-family: '116watermelon';
+}
+.portfolio .wrapper {
+    place-items: center;
+}
+.portfolio .title h2 {
+    line-height: 1; 
+    letter-spacing: 0;
+    margin: 0 0 5em 0;
+}
+.portfolio .title h2 .tpo {
+    font-size: 4em;
+}
+.portfolio .title h2 .que {
+    font-size: 38em;   
+}
+.portfolio .title h2 .wh {
+    font-size: 13em;
+}
+.portfolio .title h2 .yy {
+    font-size: 25em;
+    
+}
+.portfolio .writing {
+    font-size: 4em;
+    border: 2px solid #111;
+    border-radius: 5em;
+    width: 14em;
+    padding: 0 1.25em 0 0;
+    text-align: center;
+    position: relative; /*after 정렬의 기준*/
+}
+.portfolio .writing::after {
+    content: "";
+    position: absolute;
+    right: 0.75em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.75em;
+    height: 0.75em;
+    background-image: url("data:image/svg+xml,%3Csvg width='54' height='54' viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_117_456)'%3E%3Cpath d='M29.19 41.9998C39.03 41.9998 47.04 33.9898 47.04 24.1498C47.04 14.3098 39.03 6.2998 29.19 6.2998C19.35 6.2998 11.34 14.3098 11.34 24.1498C11.34 33.9898 19.35 41.9998 29.19 41.9998ZM29.19 10.7998C36.57 10.7998 42.54 16.7998 42.54 24.1498C42.54 31.4998 36.54 37.4998 29.19 37.4998C21.84 37.4998 15.84 31.4998 15.84 24.1498C15.84 16.7998 21.84 10.7998 29.19 10.7998Z' fill='%23111111'/%3E%3Cpath d='M36.3174 39.6306L22.9512 40.0518L29.1805 54.3868L42.5467 53.9656L36.3174 39.6306Z' fill='%23111111'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_117_456'%3E%3Crect width='54' height='54' fill='white' transform='matrix(-1 0 0 1 54 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.portfolio .writing span { /*타이핑 커서 효과*/
+    width: 11ch;
+    height: 100px;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-size: 1em;
+}
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+.portfolio .explan {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5em 0 2em 0;
+    font-size: 2em;
+}
+
+
+
+
+.profile {
+    padding: 7em 0;
+    border-top: 5px solid #111;
+}
+.profile .title {
+    text-align: right;
+    font-family: '116watermelon';
+    line-height: 1; 
+    letter-spacing: 0;
+}
+.profile .title h1 {
+    font-size: 10em;
+}
+.profile .title strong {
+    font-size: 5em;
+}
+.profile .name {
+    font-family: '116watermelon';
+    text-align: left;
+    display: flex;
+    gap: 1.5em;
+    margin: 0 0 2.45em 0;
+}
+.profile .name h2 {
+    font-size: 5em;
+    line-height: 1.2; 
+    letter-spacing: 0;
+}
+.profile .name strong {
+    font-size: 3em;
+}
+.profile .file_cnt {
+    font-family: '116watermelon';
+    position: relative;
+}
+.profile .file_cnt .photo {
+    overflow: hidden;
+    width: 24em;
+    height: 30em;
+}
+.profile .file_cnt .photo img {
+    width: 100%;
+    height: 100%;
+}
+.profile .file_cnt .contect {
+    background-color: #DDD;
+    margin: 3.72em 0 0 0;
+    width: 24em;
+    height: 13em;
+    position: relative;
+    border-left: 9px solid #BBB;
+}
+.profile .file_cnt .contect h2 {
+    font-size: 5em;
+    color: #BBB;
+    line-height: 1.2; 
+    letter-spacing: 0;
+    margin: 0 0 0.5em 0;
+}
+.profile .file_cnt .contect .tect_cnt {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+}
+.profile .file_cnt .contect .tect_cnt span {
+    font-size: 2em;
+    line-height: 1.2; 
+    letter-spacing: 0;
+}
+
+.profile .file_cnt .details {
+	font-family: 'SCoreDream';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%; /*50em*/
+}
+
+.profile .file_cnt .details .list {
+    border-top: 2px solid #111;
+    padding: 1.3em 0 2.5em 0.5em;
+}
+.profile .file_cnt .details .list h4 {
+    font-family: '116watermelon';
+    font-size: 1.3em;
+}
+.profile .file_cnt .details .list .edu_cnt {
+    display: flex;
+    gap: 1.5em;
+}
+.profile .file_cnt .details .list .skill_cnt {
+    display: flex;
+    gap: 1.5em;
+}
+.profile .file_cnt .details .list .skill_cnt ul {
+    display: flex;
+    gap: 0.5em;
+}
+/*--------------------------아이콘 svg 넣고 마우스 오버시 컬러 있는 거*/
+
+.index {
+    padding: 0 0 7em 0;
+}
+.index .title {
+    text-align: right;
+    font-family: '116watermelon';
+    line-height: 1; 
+    letter-spacing: 0;
+}
+.index .title h1 {
+    font-size: 10em;
+}
+.index .title strong {
+    font-size: 5em;
+}
+.index ul li {
+    width: 100%;
+    border-top: 2px solid #111;
+}
+.index ul li:last-child {
+    border-bottom: 2px solid #111;
+}
+.index ul li a {
+    display: block;
+    width: 100%;
+    font-size: 5em;
+    padding: 0.25em 0;
+    transition: 0.5s;
+}
+.index ul li a:hover {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+.index ul li a.num2:hover {
+    background-color: #57820D;
+}
+
+
+.assemble {
+    padding: 8em 0;
+    background-color: #111;
+    color: #fff;
+}
+.assemble .title {
+    text-align: left;
+    display: flex;
+}
+.assemble .title h1 {
+    font-size: 10em;
+}
+.assemble .title strong {
+    font-size: 2em;
+}
+.assemble .intro {
+    display: flex;
+    height: 558px;
+    margin: 0 0 15em 0;
+}
+.assemble .intro .photo {
+    width: 900px;
+    height: 558px;
+    overflow: hidden;
+}
+.assemble .intro .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.assemble .intro .intro_cnt {
+    width: 660px;
+    height: 558px;
+}
+.assemble .intro .intro_cnt .renewal {
+    padding: 0 1.5em 1.5em 1.5em;
+    width: 100%;
+    height: 44%;
+}
+.assemble .intro .intro_cnt .renewal h3 {
+    font-size: 3em;
+}
+.assemble .intro .intro_cnt .renewal p {
+    text-align: right;
+}
+.assemble .intro .intro_cnt .link {
+    width: 100%;
+    height: 56%;
+    padding: 1.5em;
+    background-color: #F0F0F0;
+    color: #111;
+}
+.assemble .intro .intro_cnt .link a {
+    display: block;
+    font-size: 3em;
+    text-align: right;
+    align-items: baseline;
+
+}
+.assemble .design {
+    width: 1560px;
+    height: 3843px;
+    overflow: hidden;
+}
+.assemble .design img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+.greenpeace {
+    padding: 10em 0;
+}
+.greenpeace .title {
+    text-align: left;
+    font-family: 'Moneygraphy';
+}
