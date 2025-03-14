@@ -134,21 +134,3 @@ footer .copyright {
     text-align: right;
 
 }
-
-body {
-    scrollbar-width: thin;
-    scrollbar-color: black white; /* 검은색 Thumb 와 흰색 Track */
-}
-body::-webkit-scrollbar {
-	...
-}
-
-/* 스크롤바 막대 꾸미기 */
-body::-webkit-scrollbar-thumb {
-	...
-}
-
-/* 스크롤바 트랙 꾸미기 */
-body::-webkit-scrollbar-track {
-	...
-}
