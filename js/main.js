@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 
     gsap.from(".portfolio .writing span", {
-        duration: 1, 
+        duration: 4, 
         text: ""
     }) //글자를 감싸는 요소
 
