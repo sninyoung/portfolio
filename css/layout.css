@@ -72,4 +72,22 @@ footer {
     padding: 100px 0 100px 0;
     background-color: #111;
     color: #fff;
+    font-family: '116watermelon';
+    letter-spacing: 0; 
+}
+footer .thanks {
+    text-align: left;
+}
+footer .thanks strong {
+    font-size: 3em;
+}
+footer .thanks h2 {
+    font-size: 13em; 
+    margin-bottom: 1.6em;
+    line-height: 1;
+}
+footer .copyright {
+    font-size: 2em;
+    text-align: right;
+
 }

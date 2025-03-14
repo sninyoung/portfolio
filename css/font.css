@@ -1,7 +1,7 @@
 /*LibreBodoni : 어셈블 영문*/
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
-/*116 수박화체 116watermelon : 포트폴리오 제목*/
 
+/*116 수박화체 116watermelon : 포트폴리오 제목*/
 @font-face {
 	font-family: '116watermelon';
 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116watermelon.woff') format('woff');
@@ -47,6 +47,12 @@
 	font-weight: 600;
 	font-display: swap;
 	src: local('S-Core Dream Bold'), url(../fonts/SCoreDreamBold.woff2) format('woff2'), url(../fonts/SCoreDreamBold.woff) format('woff');
+}
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 500;
+	font-display: swap;
+	src: local('S-Core Dream Medium'), url(../fonts/SCoreDreamMedium.woff2) format('woff2'), url(../fonts/SCoreDreamMedium.woff) format('woff');
 }
 @font-face {
 	font-family: 'SCoreDream';

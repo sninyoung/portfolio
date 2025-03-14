@@ -8,6 +8,7 @@
     <script src="js/common.js"></script> <!--javascript 호출-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <link rel="stylesheet" href="css/animations.css">
 
     <link rel="stylesheet" href="css/main.css"> <!--css 호출-->
 
@@ -91,36 +92,29 @@
                                 <div class="skill_cnt">
                                     <strong>Publishing</strong>
                                     <ul>
-                                        <li><span>Html</span></li>
-                                        <li><span>Css</span></li>
-                                        <li><span>JavaScript</span></li>
-                                        <li><span>Jquery</span></li>
-                                        <li><span>VSCode</span></li>
-                                        <li><span>GitHub</span></li>
-                                        <li><span>Figma</span></li>
-                                        <li><span>Photoshop</span></li>
-                                        <li><span>Illustrator</span></li>
-                                        <li><span>Xd</span></li>
-                                        <li><span>Hwp</span></li>
-                                        <li><span>Excel</span></li>
-                                        <li><span>PPT</span></li>
+                                        <li class="html"><span>Html</span></li>
+                                        <li class="css"><span>Css</span></li>
+                                        <li class="js"><span>JavaScript</span></li>
+                                        <li class="jq"><span>Jquery</span></li>
+                                        <li class="vs"><span>VSCode</span></li>
+                                        <li class="gitHub"><span>GitHub</span></li>
                                     </ul>
                                 </div><!--skill_cnt-->
                                 <div class="skill_cnt">
                                     <strong>Design</strong>
                                     <ul>
-                                        <li><span>Figma</span></li>
-                                        <li><span>Photoshop</span></li>
-                                        <li><span>Illustrator</span></li>
-                                        <li><span>Xd</span></li>
+                                        <li class="fig"><span>Figma</span></li>
+                                        <li class="ps"><span>Photoshop</span></li>
+                                        <li class="ai"><span>Illustrator</span></li>
+                                        <li class="xd"><span>Xd</span></li>
                                     </ul>
                                 </div><!--skill_cnt-->
                                 <div class="skill_cnt">
                                     <strong>Documentation</strong>
                                     <ul>
-                                        <li><span>Hwp</span></li>
-                                        <li><span>Excel</span></li>
-                                        <li><span>PPT</span></li>
+                                        <li class="hwp"><span>Hwp</span></li>
+                                        <li class="exl"><span>Excel</span></li>
+                                        <li class="ppt"><span>PPT</span></li>
                                     </ul>
                                 </div><!--skill_cnt-->
                             </div>
@@ -151,7 +145,7 @@
                         <div class="intro_cnt">
                             <div class="renewal">
                                 <h3>Renewal</h3>
-                                <p>기존 사이트의 정적이고 고루한 느낌을 탈피하고, <br>단순하되 현대적이고 직관적인 디자인을 통해 사용자 경험을 <br>향상시켰습니다. 더욱 명확하고 반응적인 UI/UX를 적용하여, <br>고객들이 필요한 정보를 빠르고 쉽게 찾을 수 있도록 하였습니다.</p>
+                                <p>기존 사이트의 정적이고 고루한 느낌을 탈피하고, <br><span>단순</span>하되 <span>현대적</span>인 디자인으로 사용자 경험을 개선했습니다. <br><span>명확</span>하고 <span>반응적</span>인 UI/UX를 적용하여 <br>필요한 정보에 대한 고객들의 접근성을 높였습니다.</p>
                             </div>
                             <div class="link">
                                 <a href="https://sninyoung.github.io/portfolio/assemble/" target="_blank" title="새창열기">
@@ -175,8 +169,8 @@
                         <div class="intro_cnt">
                             <div class="renewal">
                                 <h3>Renewal</h3>
-                                <p>환경 보호에 대한 긍정적이고 희망적인  메시지를 전달하기 위해 <br>
-                                    밝고 환한 컬러 팔레트와 둥글고 부드러운 타이포그래피를 활용하여 <br>
+                                <p>환경 보호에 대한 <span>긍정적</span>이고 <span>희망적</span>인 메시지를 전달하기 위해 <br>
+                                    <span>밝고 환한 컬러</span> 팔레트와 <span>둥글고 부드러운 타이포그래피</span>를 활용하여 <br>
                                     시각적으로 생동감 넘치고 친근한 경험을 제공하였습니다. 
                                 </p>
                             </div>
@@ -189,12 +183,18 @@
                         </div>
                     </div>
                     <div class="design"><img src="images/greenpeace_design_img.png" alt="디자인 이미지"></div>
-                    <div class="screen"><img src="images/greenpeace_screen_img.png" alt="구현화면 이미지"></div>
                 </div><!--wrapper-->
+                <div class="screen"><div class="photo"><img src="images/greenpeace_screen_img.png" alt="구현화면 이미지"></div></div>
             </section><!--greenpeace-->
         </main>
         <footer>
-
+            <div class="wrapper">
+                <div class="thanks">
+                    <strong>귀한 시간 내어 주셔서</strong>
+                    <h2>감사합니다.</h2>
+                </div>
+                <div class="copyright">Copyright shinyoung 2025. All rights reserved.</div>
+            </div><!--wrapper-->
         </footer>
     </div>
 </body>
