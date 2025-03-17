@@ -166,11 +166,6 @@
     color: #fff;
     overflow: hidden;
 }
-/* 마우스 오버시 위치가 변하는 애니메이션을 줄때는 오버를 움직이는 요소 상위 요소로 설정 */
-.service .list ul li:hover a {
-    transform: translate(-10px, -10px);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-}
 .value ul li h3 {
     text-align: center;
     font-size: 2.5rem;
@@ -529,16 +524,17 @@
 .project .swiper ul li {
     width: 16.7em;
     height: 16.7em;
-
 }
 .project .swiper ul li a {
     display: block;
     position: relative;
 }
 .project .swiper ul li a .photo {
+    position: relative;
     overflow: hidden;
     border-radius: 20px;
-    position: relative;
+    font-size: 0;
+    line-height: 0;
 }
 .project .swiper ul li a .photo::before {
     content: "";
@@ -650,7 +646,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 2.8em;
+    gap: 1em;
 }
 .support .cont_wrap .swiper {
     width: 50%;
