@@ -166,6 +166,11 @@
     color: #fff;
     overflow: hidden;
 }
+/* 마우스 오버시 위치가 변하는 애니메이션을 줄때는 오버를 움직이는 요소 상위 요소로 설정 */
+.service .list ul li:hover a {
+    transform: translate(-10px, -10px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
 .value ul li h3 {
     text-align: center;
     font-size: 2.5rem;
@@ -533,11 +538,27 @@
 .project .swiper ul li a .photo {
     overflow: hidden;
     border-radius: 20px;
+    position: relative;
+}
+.project .swiper ul li a .photo::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.3;
+    z-index: 1;
+    transition: 0.7s;
 }
 .project .swiper ul li a .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.project .swiper ul li a:hover .photo::before {
+    opacity: 0;
 }
 .project .swiper ul li a .project_txt {
     position: absolute;
