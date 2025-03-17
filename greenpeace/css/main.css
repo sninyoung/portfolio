@@ -378,14 +378,17 @@
     background-color: #fff;
 } 
 .campaign .accordion_wrap .accordion .tit {
-    position: relative;;
+}
+.campaign .accordion_wrap .accordion .tit span {
+    display: block;
+    position: relative;
     font-family: "Moneygraphy";
     font-size: 1.6rem;
     line-height: 1.2;
     letter-spacing: -0.05em;
-    padding: 1em 0 0.6em 0.8em;
+    padding: 1em 0 0.6em 0.2em;
 }
-.campaign .accordion_wrap .accordion .tit::before {
+.campaign .accordion_wrap .accordion .tit span::before {
     content: "";
     position: absolute;
     left: -20px;
@@ -395,19 +398,19 @@
     border-radius: 50%;
     background-color: var(--point-color);
 }
-.campaign .accordion_wrap .accordion .tit.n02::before {
+.campaign .accordion_wrap .accordion .tit.n02 span::before {
     background-color: #FF5858;
 }
-.campaign .accordion_wrap .accordion .tit.n03::before {
+.campaign .accordion_wrap .accordion .tit.n03 span::before {
     background-color: #FCC400;
 }
-.campaign .accordion_wrap .accordion .tit.n04::before {
+.campaign .accordion_wrap .accordion .tit.n04 span::before {
     background-color: var(--main-color);
 }
-.campaign .accordion_wrap .accordion .tit.n05::before {
+.campaign .accordion_wrap .accordion .tit.n05 span::before {
     background-color: #777;
 }
-.campaign .accordion_wrap .accordion .tit.n06::before {
+.campaign .accordion_wrap .accordion .tit.n06 span::before {
     background-color: #83AFBA;
 }
 .campaign .accordion_wrap .accordion .photo {
