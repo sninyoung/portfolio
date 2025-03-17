@@ -338,7 +338,7 @@
 
 /*******---------campaign------*******/
 .campaign {
-    padding: 10em 0;
+    padding: 7em 0;
 }
 .campaign .wrapper {
     display: flex;
@@ -349,7 +349,7 @@
 .campaign .title_txt {
     position: sticky;
     text-align: left;
-    top: 11.1em;
+    top: 7em;
     padding-bottom: 20em;
     width: 40%;
 }
@@ -386,7 +386,7 @@
     font-size: 1.8rem;
     line-height: 1.2;
     letter-spacing: -0.05em;
-    padding: 1em 0 0.6em 0.2em;
+    padding: 0.8em 0 0.3em 0.2em;
 }
 .campaign .accordion_wrap .accordion .tit span::before {
     content: "";

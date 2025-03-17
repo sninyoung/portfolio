@@ -88,7 +88,7 @@ $(document).ready(function(){
             ease: "none",
             scrollTrigger: {
                 trigger: item,
-                start: "top " + ((header.clientHeight * i)+160),
+                start: "top " + ((header.clientHeight * i)+60),
                 endTrigger: ".final",  // 고정요소 하단에 종료를 뜻하는 class
                 end: "top " + header.clientHeight * items.length,
                 pin: true,
