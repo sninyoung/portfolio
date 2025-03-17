@@ -321,6 +321,9 @@
     .value {
         padding: 6em 0;
     }
+    .value .title_txt h2 {
+        font-size: 2.1rem;
+    }
     .value ul {
         width: 18em;
     }
@@ -350,7 +353,7 @@
     position: sticky;
     text-align: left;
     top: 7em;
-    padding-bottom: 20em;
+    padding-bottom: 26em;
     width: 40%;
 }
 .campaign .title_txt strong {
@@ -376,8 +379,6 @@
 .campaign .accordion_wrap .accordion { 
     position: relative;
     background-color: #fff;
-} 
-.campaign .accordion_wrap .accordion .tit {
 }
 .campaign .accordion_wrap .accordion .tit span {
     display: block;
@@ -391,8 +392,8 @@
 .campaign .accordion_wrap .accordion .tit span::before {
     content: "";
     position: absolute;
-    left: -20px;
-    top: 0.67em;
+    left: -0.5em;
+    top: 0.5em;
     width: 0.5em;
     height: 0.5em;
     border-radius: 50%;
@@ -435,7 +436,7 @@
 }
 .campaign .cont_wrap .final {
     background-color: #fff;
-    height: 38.8em;
+    height: 32em;
 }
 
 @media screen and (max-width:1440px){ /*17px*/
@@ -453,6 +454,9 @@
         left: 3em;
         top: 7em;
     }
+    .campaign .cont_wrap .final {
+        height: 26em;
+    }
 } /* @media */
 @media screen and (max-width:1024px){ /*16px*/
     .campaign {
@@ -467,15 +471,22 @@
     .campaign .accordion_wrap .accordion .photo {
         border-radius: 30px;
     }
+    .campaign .cont_wrap .final {
+        height: 20em;
+    }
 } /* @media */
 
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*15px*/
+    .campaign {
+        padding: 2em 0;
+    }
     .campaign .wrapper {
         display: block; /*flex 해제*/
     }
     .campaign .title_txt {
-        top: 0;
+        position: relative;
+        top: 20px;
         padding-bottom: 0;
         padding-top: 2.8em;
         width: 100%;
@@ -488,9 +499,40 @@
         left: 2em;
         top: 6.5em;
     }
+    .campaign .accordion_wrap .accordion .tit span::before {
+        content: "";
+        position: absolute;
+        left: -0.3em;
+        top: 0.5em;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        background-color: var(--point-color);
+    }
+    .campaign .cont_wrap .final {
+        height: 36em;
+    }
+} /* @media */
+@media screen and (max-width: 540px){ /*15px*/
+    .campaign .cont_wrap .final {
+        height: 25em;
+    }
 } /* @media */
 @media screen and (max-width:380px){ /*14px*/
-    
+    .campaign .title_txt h2 {
+        font-size: 2.1rem;
+    }
+    .campaign .cont_wrap .final {
+        height: 21em;
+    }
+    .campaign .accordion_wrap .accordion .tit span {
+        font-size: 1.5rem;
+    }
+    .campaign .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 1.4em;
+        top: 5em;
+    }
 } /* @media */
 
 
@@ -528,6 +570,7 @@
 .project .swiper ul li a {
     display: block;
     position: relative;
+    overflow: hidden;
 }
 .project .swiper ul li a .photo {
     position: relative;
@@ -539,8 +582,8 @@
 .project .swiper ul li a .photo::before {
     content: "";
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgb(0, 0, 0);
@@ -562,6 +605,7 @@
     bottom: 1em;
     display: flex;
     align-items: flex-end;
+    max-width: calc(100% - 2em);
 }
 .project .swiper ul li a .project_txt span {
     padding: 0.125em 0.625em;
@@ -585,8 +629,12 @@
     background-color: #83AFBA;
 }
 .project .swiper ul li a .project_txt h3 {
+    display: block;
     font-size: 1.1rem;
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media screen and (max-width:1440px){ /*17px*/
@@ -623,9 +671,14 @@
         width: 14em;
         height: 14em;
     }
+    .project .swiper ul li a .photo::before {
+        opacity: 0;
+    }
 } /* @media */
 @media screen and (max-width:380px){ /*14px*/
-    
+    .project .title_txt h2 {
+        font-size: 2.1rem;
+    }
 } /* @media */
 
 /*******---------support------*******/
@@ -814,6 +867,9 @@
     }
 } /* @media */
 @media screen and (max-width:380px){ /*14px*/
+    .support h2 {
+        font-size: 2.1rem;
+    }
     .support .cont_wrap .swiper ul li a {
         padding: 0;
     }
@@ -959,11 +1015,13 @@
 } /* @media */
 
 /* mobile 버전 css */
-@media screen and (max-width:768px){ /*15px*/
-    
-} /* @media */
 @media screen and (max-width:380px){ /*14px*/
-    
+    .news {
+        padding: 4em 0 3em 0;
+    }
+    .news .title_txt h2 {
+        font-size: 2.1rem;
+    }
 } /* @media */
 
 
@@ -1200,5 +1258,10 @@
     }
 } /* @media */
 @media screen and (max-width:380px){ /*14px*/
-    
+    .subscribe .title_txt h2 {
+        font-size: 2.1rem;
+    }
+    .news .swiper ul li {
+        padding: 0 2em 1em 2em;
+    }
 } /* @media */
