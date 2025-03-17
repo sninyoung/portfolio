@@ -198,6 +198,7 @@ main.container {
 }
 .product .tab_content .tab_panel .swiper ul li a {
     display: block;
+    margin: 0 0.2em;
 }
 .product .tab_content .tab_panel .swiper ul li a .photo {
     height: 100%; /*302px*/
@@ -211,7 +212,7 @@ main.container {
     transition: 0.5s;
 }
 .product .tab_content .tab_panel .swiper ul li a:hover .photo img {
-    transform: scale3d(1.1, 1.1, 1);
+    transform: scale3d(0.9, 0.9, 1);
 }
 .product .tab_content .tab_panel .swiper ul li a strong {
     display: inline-block;
