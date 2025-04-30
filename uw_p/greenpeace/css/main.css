@@ -1,0 +1,1267 @@
+/*그린피스 main.css*/
+ @import url(default.css);
+ @import url(font.css);
+ @import url(common.css);
+ @import url(layout.css);
+
+
+.visual h2 {
+    display: none; /* '동영상' 글자 숨김*/
+}
+.visual .video_area {
+    height: 200vh;
+    position: relative; /* video_wrap 정렬의 기준 */
+}
+.visual .video_area .video_wrap {
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+.visual .video_area[data-status="before"] .video_wrap {
+    position: absolute; /*video_area*/
+    top: 0;
+}
+.visual .video_area[data-status="fixed"] .video_wrap {
+    position: fixed;
+    top: 0;
+}
+.visual .video_area[data-status="after"] .video_wrap {
+    position: absolute;
+    bottom: 0;
+}
+.visual .video_area .video_wrap .video_inner {
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    /* video_wrap 영역의 좌우위아래 가운데 */
+    width: 75%;
+    height: 70%;
+    border-radius: 3.2em;
+    transition: 0.2s;
+}
+.visual .video_area .video_wrap .video_inner.brzero { /*비디오 모서리 둥글게 만든거 없애주기 -> js에서 코드*/
+    border-radius: 0;
+}
+.visual .video_area .video_wrap .video_inner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .video_area .video_wrap .video_inner .video_txt {
+    position: absolute;
+    left: 18%;
+    top: 28%;
+    color: #fff;
+}
+.visual .video_area .video_wrap .video_inner .video_txt h3 {
+    font-family: "Moneygraphy";
+    font-size: 5rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em; /* 자간*/
+}
+.visual .video_area .video_wrap .video_inner .video_txt strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.05em; /* 자간*/
+}
+.visual .video_area .video_wrap .video_inner p {
+    position: absolute;
+    left: 37%;
+    bottom: 28%;
+    color: #fff;
+    padding-right: 4.5em;
+}
+/* mobile 버전 css */
+@media screen and (max-width:1440px){ /*17px*/
+    .visual .video_area .video_wrap .video_inner .video_txt h3 {
+        font-size: 4rem;
+    }
+    .visual .video_area .video_wrap .video_inner .video_txt {
+        left: 15%;
+        top: 18%;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .visual .video_area .video_wrap .video_inner .video_txt h3 {
+        font-size: 3rem;
+    }
+    .visual .video_area .video_wrap .video_inner .video_txt {
+        left: 15%;
+        top: 18%;
+    }
+    .visual .video_area .video_wrap .video_inner p {
+        left: 34%;
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .visual .video_area .video_wrap .video_inner .video_txt h3 {
+        font-size: 2.2rem;
+    }
+    .visual .video_area .video_wrap .video_inner .video_txt {
+        left: 12%;
+        top: 18%;
+    }
+    .visual .video_area .video_wrap .video_inner p {
+        left: 13%;
+        padding-right: 2em;
+    }
+    .visual .video_area .video_wrap .video_inner {
+        border-radius: 1.5em;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    .visual .video_area .video_wrap .video_inner .video_txt h3 {
+        font-size: 2.1rem;
+    }
+    .visual .video_area .video_wrap .video_inner .video_txt {
+        left: 15%;
+        top: 18%;
+    }
+    .visual .video_area .video_wrap .video_inner p {
+        left: 10%;
+        padding-right: 1em;
+    }
+} /* @media */
+
+
+/*******---------value------*******/
+.value {
+    padding: 10em 0;
+    background: linear-gradient(to top,  #eee 50%, #fff);
+}
+.value .title_txt {
+    text-align: center;
+}
+.value .title_txt strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.value .title_txt h2 {
+    font-family: "Moneygraphy";
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0.11em 0 0.3em 0;
+}
+.value ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.1em;
+    margin: 3em 0 0 0;
+}
+.value ul li {
+    position: relative; /*after의 정렬의 기준*/
+    width: 20em;
+    height: 20em;
+    background-color: var(--point-color);
+    border-radius: 2.5em;
+    padding: 3em 0 0 0;
+    color: #fff;
+    overflow: hidden;
+}
+.value ul li h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.value ul li p {
+    display: none;
+    font-size: 1.4rem;
+    padding: 2em 1.6em 1em 1.6em;
+    word-break: break-all; /* 단어별로(여백기준) 줄바꿈 */
+}
+.value ul li:hover p {
+    display: block;
+    transition: all 0.5s;
+}
+.value ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 60%;
+    background-image: url("data:image/svg+xml,%3Csvg width='165' height='211' viewBox='0 0 165 211' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_81_739)'%3E%3Cpath d='M82.4994 14.8962C81.317 14.8962 80.3574 13.9362 80.3574 12.7483V2.14794C80.3574 0.962258 81.3148 0 82.4994 0C83.6839 0 84.6413 0.960046 84.6413 2.14794V12.7505C84.6413 13.9362 83.6839 14.8984 82.4994 14.8984V14.8962Z' fill='white'/%3E%3Cpath d='M131.845 35.3935C131.298 35.3935 130.749 35.1834 130.332 34.7653C129.496 33.9269 129.496 32.5665 130.332 31.7281L137.808 24.2313C138.644 23.3929 139.998 23.3929 140.837 24.2313C141.673 25.0697 141.673 26.4301 140.837 27.2663L133.361 34.7631C132.942 35.1834 132.395 35.3913 131.848 35.3913L131.845 35.3935Z' fill='white'/%3E%3Cpath d='M25.6774 141.859C25.1303 141.859 24.5811 141.649 24.1641 141.231C23.3281 140.392 23.3281 139.032 24.1641 138.196L31.64 130.699C32.476 129.861 33.8304 129.861 34.6687 130.699C35.5047 131.537 35.5047 132.898 34.6687 133.736L27.1929 141.233C26.7737 141.653 26.2267 141.861 25.6796 141.861L25.6774 141.859Z' fill='white'/%3E%3Cpath d='M162.857 84.8779H152.285C151.102 84.8779 150.143 83.9179 150.143 82.73C150.143 81.5421 151.1 80.582 152.285 80.582H162.857C164.04 80.582 164.999 81.5421 164.999 82.73C164.999 83.9179 164.042 84.8779 162.857 84.8779Z' fill='white'/%3E%3Cpath d='M12.7149 84.8779H2.14194C0.959572 84.8779 0 83.9179 0 82.73C0 81.5421 0.957366 80.582 2.14194 80.582H12.7149C13.8972 80.582 14.8568 81.5421 14.8568 82.73C14.8568 83.9179 13.8995 84.8779 12.7149 84.8779Z' fill='white'/%3E%3Cpath d='M139.321 141.859C138.774 141.859 138.225 141.649 137.808 141.231L130.332 133.734C129.496 132.896 129.496 131.536 130.332 130.697C131.168 129.859 132.523 129.859 133.359 130.697L140.834 138.194C141.67 139.032 141.67 140.393 140.834 141.229C140.415 141.649 139.868 141.857 139.321 141.857V141.859Z' fill='white'/%3E%3Cpath d='M33.1552 35.3933C32.6081 35.3933 32.0588 35.1831 31.6419 34.765L24.1661 27.2683C23.3301 26.4299 23.3301 25.0694 24.1661 24.2333C25.0021 23.3949 26.3566 23.3949 27.1926 24.2333L34.6684 31.73C35.5045 32.5684 35.5045 33.9289 34.6684 34.7672C34.2493 35.1875 33.7023 35.3955 33.1552 35.3955V35.3933Z' fill='white'/%3E%3Cpath d='M109.451 20.3265C109.175 20.3265 108.895 20.2734 108.626 20.1606C107.536 19.7027 107.02 18.444 107.477 17.3512L111.56 7.57159C112.017 6.47661 113.274 5.96341 114.362 6.4191C115.451 6.877 115.967 8.13568 115.511 9.22845L111.428 19.0081C111.084 19.831 110.289 20.3265 109.451 20.3265Z' fill='white'/%3E%3Cpath d='M147.075 58.3437C146.232 58.3437 145.432 57.8415 145.092 57.0098C144.644 55.9126 145.167 54.6583 146.261 54.2093L156.044 50.1899C157.138 49.7387 158.389 50.2651 158.837 51.3623C159.285 52.4595 158.762 53.7138 157.668 54.1628L147.885 58.1822C147.62 58.2906 147.344 58.3437 147.073 58.3437H147.075Z' fill='white'/%3E%3Cpath d='M8.1414 115.432C7.29874 115.432 6.49799 114.929 6.15828 114.098C5.71048 113.001 6.23328 111.746 7.32742 111.297L17.1106 107.278C18.2048 106.829 19.4555 107.353 19.9033 108.45C20.3511 109.547 19.8283 110.802 18.7342 111.251L8.95097 115.27C8.68626 115.379 8.41052 115.432 8.13919 115.432H8.1414Z' fill='white'/%3E%3Cpath d='M156.621 116C156.346 116 156.066 115.947 155.796 115.834L146.044 111.739C144.954 111.281 144.438 110.023 144.895 108.93C145.351 107.835 146.609 107.322 147.696 107.777L157.449 111.872C158.538 112.33 159.055 113.589 158.598 114.681C158.254 115.504 157.46 116 156.621 116Z' fill='white'/%3E%3Cpath d='M18.1276 57.8526C17.8518 57.8526 17.5717 57.7995 17.3026 57.6845L7.54803 53.5899C6.45831 53.132 5.94212 51.8733 6.39875 50.7806C6.85537 49.6856 8.11495 49.1724 9.20025 49.6281L18.9548 53.7227C20.0445 54.1806 20.5607 55.4392 20.1041 56.532C19.76 57.3549 18.9658 57.8504 18.1276 57.8504V57.8526Z' fill='white'/%3E%3Cpath d='M56.0382 20.1233C55.1956 20.1233 54.397 19.6211 54.0551 18.7894L50.047 8.97877C49.5992 7.88157 50.122 6.62732 51.2161 6.17826C52.3102 5.72921 53.561 6.25347 54.0088 7.35067L58.0169 17.1613C58.4647 18.2585 57.9419 19.5127 56.8478 19.9618C56.5831 20.0702 56.3073 20.1233 56.036 20.1233H56.0382Z' fill='white'/%3E%3Cpath d='M101.258 184.891H65.0894C63.049 184.891 61.3945 183.232 61.3945 181.186C61.3945 179.14 63.049 177.48 65.0894 177.48H101.258C103.298 177.48 104.952 179.14 104.952 181.186C104.952 183.232 103.298 184.891 101.258 184.891Z' fill='white'/%3E%3Cpath d='M101.258 196.529H65.0894C63.049 196.529 61.3945 194.87 61.3945 192.823C61.3945 190.777 63.049 189.118 65.0894 189.118H101.258C103.298 189.118 104.952 190.777 104.952 192.823C104.952 194.87 103.298 196.529 101.258 196.529Z' fill='white'/%3E%3Cpath d='M74.3974 200.911C73.5018 200.911 72.8224 201.727 72.9878 202.61C73.879 207.384 78.0504 210.998 83.0688 210.998C88.0873 210.998 92.2587 207.384 93.1498 202.61C93.3153 201.727 92.6359 200.911 91.7403 200.911H74.3974Z' fill='white'/%3E%3Cpath d='M97.4288 172.811H68.388C63.3563 172.811 59.121 168.867 58.7438 163.832C57.5129 147.414 50.8334 137.01 43.759 125.996C36.0449 113.985 28.0684 101.566 28.0684 81.4826C28.0684 54.3624 47.412 31.5403 74.066 27.2157C80.2977 26.2047 86.8625 26.2844 93.0589 27.4435C118.954 32.299 137.749 55.026 137.749 81.4826C137.749 101.566 129.772 113.987 122.056 125.996C114.981 137.01 108.3 147.414 107.071 163.832C106.694 168.867 102.456 172.811 97.4266 172.811H97.4288Z' fill='white'/%3E%3Cpath d='M56.3385 115.936C55.2356 115.936 54.1503 115.425 53.451 114.465C33.6397 87.1746 48.2428 61.5631 48.8737 60.4858C49.873 58.7825 52.0613 58.2118 53.7598 59.2138C55.4562 60.2159 56.0253 62.4037 55.0326 64.1048C54.4856 65.0493 42.2406 86.8605 59.2217 110.251C60.382 111.848 60.0312 114.087 58.4386 115.25C57.8033 115.713 57.0687 115.936 56.3408 115.936H56.3385Z' fill='%2308809D'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_81_739'%3E%3Crect width='165' height='211' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.value ul li:hover::after {
+    display: none;
+}
+.value ul li:nth-child(2) {
+    background-color: var(--main-color);
+}
+.value ul li:nth-child(2)::after {
+    width: 56%;
+    height: 56%;
+    background-image: url("data:image/svg+xml,%3Csvg width='164' height='201' viewBox='0 0 164 201' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_81_764)'%3E%3Cmask id='mask0_81_764' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='6' width='164' height='147'%3E%3Cpath d='M0 94.8528C0 114.068 14.8282 129.643 33.106 129.643C38.8648 129.643 44.2619 128.095 48.9774 125.386C50.132 140.369 64.4733 152.231 82 152.231C99.5267 152.231 113.868 140.381 115.023 125.386C119.738 128.095 125.149 129.643 130.894 129.643C149.186 129.643 164 114.068 164 94.8528C164 78.5039 153.261 64.7911 138.795 61.0667C142.481 55.4558 144.651 48.6598 144.651 41.3318C144.651 22.117 129.823 6.54199 111.545 6.54199C98.6365 6.54199 87.4667 14.3053 82 25.6359C76.5333 14.3053 65.3635 6.54199 52.455 6.54199C34.1632 6.54199 19.3489 22.117 19.3489 41.3318C19.3489 48.6598 21.5189 55.4558 25.2051 61.0667C10.7386 64.7911 0 78.5039 0 94.8528Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_81_764)'%3E%3Cpath d='M0 94.8528C0 114.068 14.8282 129.643 33.106 129.643C38.8648 129.643 44.2619 128.095 48.9774 125.386C50.132 140.369 64.4733 152.231 82 152.231C99.5267 152.231 113.868 140.381 115.023 125.386C119.738 128.095 125.149 129.643 130.894 129.643C149.186 129.643 164 114.068 164 94.8528C164 78.5039 153.261 64.7911 138.795 61.0667C142.481 55.4558 144.651 48.6598 144.651 41.3318C144.651 22.117 129.823 6.54199 111.545 6.54199C98.6365 6.54199 87.4667 14.3053 82 25.6359C76.5333 14.3053 65.3635 6.54199 52.455 6.54199C34.1632 6.54199 19.3489 22.117 19.3489 41.3318C19.3489 48.6598 21.5189 55.4558 25.2051 61.0667C10.7386 64.7911 0 78.5039 0 94.8528Z' fill='white'/%3E%3Cpath d='M187.009 0H81.668V201H187.009V0Z' fill='white'/%3E%3C/g%3E%3Cpath d='M74.3633 197.637L82.0138 42.8184L89.6505 197.637H74.3633Z' fill='white'/%3E%3Cpath d='M49.1999 52.7709C47.2108 60.5343 48.2262 68.878 51.4116 76.3028C54.597 83.7275 59.9942 90.463 67.909 94.3567C72.4159 96.5696 77.5209 97.6338 82.6815 97.5249C83.5579 97.5008 83.5579 96.3157 82.6815 96.3399C78.2581 96.4366 73.8764 95.6506 69.9121 93.9335C65.9477 92.2164 62.7344 89.8342 59.9663 86.9804C54.2493 81.0672 50.897 73.4006 49.8815 65.7703C49.3112 61.55 49.4503 57.233 50.5075 53.0853C50.7022 52.3356 49.3808 52.0212 49.186 52.7709H49.1999Z' fill='white'/%3E%3Cpath d='M81.6636 109.338C89.0499 113.063 97.8689 113.051 105.478 109.798C112.6 106.751 118.484 101.079 120.64 94.3801C121.836 90.6799 121.766 86.7377 120.292 83.0979C120 82.3845 118.678 82.6868 118.971 83.4123C121.502 89.6762 119.471 96.4117 114.909 101.563C110.346 106.714 103.113 110.536 95.4764 110.995C90.8721 111.273 86.3374 110.318 82.3591 108.298C81.5941 107.912 80.9125 108.939 81.6636 109.326V109.338Z' fill='white'/%3E%3Cpath d='M81.1518 68.9626C84.3651 69.6881 87.6896 69.2649 90.3742 67.5236C93.0589 65.7823 94.7003 63.3275 95.7018 60.6793C96.286 59.1315 96.6199 57.5232 96.7172 55.8907C96.759 55.1289 95.3958 55.1289 95.3541 55.8907C95.1732 59.1315 93.9213 62.5052 91.4592 64.9963C88.9971 67.4873 85.311 68.6603 81.4996 67.8017C80.6511 67.6082 80.2894 68.757 81.1379 68.9505L81.1518 68.9626Z' fill='white'/%3E%3Cpath d='M56.6968 110.307C56.2377 119.509 62.692 129.135 73.5697 131.069C76.6578 131.614 79.8293 131.481 82.8617 130.803C83.7102 130.61 83.3485 129.461 82.5 129.655C77.548 130.755 72.3456 130.211 67.964 127.853C63.5823 125.495 60.7307 121.915 59.2145 117.864C58.2964 115.422 57.9348 112.87 58.06 110.307C58.1017 109.545 56.7246 109.545 56.6968 110.307Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_81_764'%3E%3Crect width='164' height='201' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+.value ul li:nth-child(3) {
+    background-color: #FF5858;
+}
+.value ul li:nth-child(3)::after {
+    width: 56%;
+    height: 56%;
+    background-image: url("data:image/svg+xml,%3Csvg width='154' height='206' viewBox='0 0 154 206' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_81_736)'%3E%3Cpath d='M77 0C34.4684 0 0 34.5393 0 77.1584C0 119.778 60.6681 206 77 206C92.03 206 154 119.778 154 77.1584C154 34.5393 119.532 0 77 0ZM128.828 129.093C114.986 142.964 96.5755 150.609 77 150.609C57.4245 150.609 39.0139 142.964 25.1718 129.093C11.3296 115.223 3.70039 96.7742 3.70039 77.1584C3.70039 57.5427 11.3296 39.0942 25.1718 25.2236C25.4915 24.9031 25.8342 24.5827 26.1768 24.2851C25.9255 25.0862 25.6286 25.8644 25.1718 26.5511C24.0754 28.1762 22.2708 28.84 21.1287 30.3507C20.1009 31.7469 19.2557 33.8527 18.8674 35.4091C18.4562 37.1029 18.7075 39.1629 18.1136 40.8338C17.3598 42.9853 15.9893 44.2442 16.2406 46.7391C19.21 47.6318 17.9309 42.3216 20.4435 42.0469C21.243 44.0153 20.7176 47.7004 20.4892 49.852C20.1694 52.8276 19.5983 53.56 21.3572 56.1007C22.7505 58.1149 23.2302 59.4653 25.9255 59.7858C28.4153 60.0833 29.4432 61.2049 30.4711 63.6082C32.3898 64.0202 33.5547 64.3407 33.7832 66.4693C34.6055 66.9271 36.1815 68.4378 37.0495 68.6667C38.3287 69.01 40.453 67.1789 41.6408 68.5751C43.6508 70.9098 39.1053 76.9982 38.3058 79.104C37.1181 82.194 36.9353 86.7031 39.8591 88.9233C41.3438 90.0678 42.9427 90.5942 43.4224 92.6542C43.8793 94.554 43.5138 96.1333 44.3589 97.9416C45.6609 100.757 48.6761 101.672 50.8232 103.824C53.6328 106.639 53.4272 110.302 53.4272 114.284C53.4272 118.267 55.0033 121.632 55.5515 125.454C56.1225 129.391 57.2875 133.053 58.1098 136.876C58.7265 139.737 61.1934 144.086 64.7796 143.49C65.0309 142.14 63.6147 141.064 63.4548 139.714C63.2949 138.501 63.6375 137.219 63.3862 135.914C62.9066 133.328 62.9294 131.794 64.6425 129.551C65.2593 128.75 66.0816 128.086 66.6983 127.308C67.9089 125.752 66.9724 126.209 66.9267 124.516C66.8582 122.41 67.4978 123.44 68.7769 122.776C69.4393 122.433 70.1703 121.403 70.6728 120.876C71.7921 119.709 73.5052 118.336 74.3503 116.962C75.3097 115.406 75.1955 113.254 76.1777 111.675C77.3198 109.844 78.9187 109.844 80.5177 108.654C82.5734 107.097 81.7283 105.472 82.0937 103.366C82.7105 99.8184 84.3322 95.9044 86.5479 93.0891C89.3575 89.5413 90.5681 86.52 87.1418 83.0867C85.4515 81.3929 84.5835 81.8507 82.3222 81.2556C80.609 80.7978 79.0786 79.5618 77.3426 79.3329C76.2919 79.1956 75.6752 79.5847 74.7387 79.3329C73.8478 79.104 73.962 78.5547 73.0255 78.5776C71.6322 78.5776 69.6906 81.5073 68.5028 79.6533C67.8404 78.6233 69.8277 75.7393 69.7591 74.366C69.6449 72.6493 69.0053 69.8798 67.3379 68.9413C66.6983 68.598 65.305 68.5293 64.5283 68.2318C63.6147 67.8884 62.7238 67.3162 61.9015 66.7898C60.8508 66.1031 58.795 64.9129 58.3153 63.6998C57.0134 63.654 56.1225 62.9216 54.7977 62.9444C53.6099 62.9444 52.8104 63.5167 51.5313 63.3564C50.412 63.2191 49.1786 62.3264 47.968 62.5096C47.1457 62.624 45.9579 63.6769 45.2498 64.066C43.3996 65.1189 41.4123 65.8742 39.3794 66.2633C36.2044 66.8584 35.6333 65.6453 35.8161 62.6927L35.3364 61.7313C36.5242 58.4353 34.3999 58.2064 32.0472 57.4053C31.7274 55.0707 34.6055 53.3998 33.3948 50.8362C30.9736 50.7218 28.3239 57.5656 26.2682 54.59C24.9205 52.6216 26.9763 47.1511 28.164 45.5031C29.3747 43.8322 33.7375 40.8109 35.7932 40.5591C37.3922 40.3531 38.8084 41.0627 39.4251 42.4818C40.0875 44.0153 39.2195 45.4573 39.4251 47.1969C41.4809 46.7162 40.9555 44.1069 40.8641 42.7107C40.7042 40.376 41.9377 40.5362 43.1255 38.8653C44.1991 37.3318 44.3818 35.5693 45.7295 34.0816C46.7802 32.9142 48.0136 31.7011 49.1786 30.6482C50.5034 29.4351 51.9881 29.5496 53.3358 28.6569C55.3916 27.2836 52.6734 24.7658 55.7114 24.9489C56.7849 25.0176 56.2596 25.6813 57.6758 25.3609C58.2925 25.2236 59.4118 24.6513 60.0285 24.3996C62.9294 23.2322 60.8736 22.9118 59.5488 21.3782C57.8585 19.4327 60.2569 19.776 61.9929 19.4784C63.272 19.2724 62.9979 18.8376 64.1172 19.5929C65.0994 20.2567 64.5283 21.1493 65.9674 21.0807C68.7084 20.9891 66.8125 18.2424 66.1958 17.3269C65.1451 15.7704 64.8938 14.6718 62.6781 14.626C62.8837 13.9164 62.9066 13.0009 62.6096 12.3142C60.7594 12.566 60.4396 11.2156 59.0234 10.6662C56.6479 9.77356 57.0362 11.7191 56.0768 13.0467C55.0718 14.42 53.1759 14.1682 52.445 15.8391C51.6912 17.5787 52.3993 18.9062 49.6354 18.4256C50.0237 17.3727 49.8867 16.0451 49.8182 14.9236C49.0187 14.8091 48.2649 14.626 47.5111 14.3742C47.5111 11.5818 50.5948 11.3529 52.6962 11.0782C55.0489 10.7807 55.8027 8.40022 57.9042 7.98822C59.8686 7.622 61.2619 10.7807 63.6603 8.94956C65.0309 7.89667 64.3913 7.27867 63.8888 6.27156C63.7517 5.99689 63.0665 5.40178 62.8837 5.15C62.8837 5.12711 62.8609 5.10422 62.838 5.05844C64.7111 4.69222 66.6069 4.41756 68.5028 4.18867C68.8683 5.24156 69.6449 6.50044 70.0561 7.21C70.3759 7.73644 70.9469 8.10267 71.1982 8.67489C71.4723 9.33867 70.8099 10.1627 71.655 10.5976C72.9341 11.2842 76.7031 6.798 77.5939 6.06556C78.736 5.15 79.4441 4.62356 79.17 3.73089C85.2002 3.914 91.1163 4.82956 96.7811 6.40889C97.2379 6.98111 97.6948 7.55333 98.1516 8.21711C99.1566 9.61333 99.7734 10.8722 101.578 11.4902C102.629 11.8564 105.964 11.7878 104.57 14.1682C103.291 16.3656 101.875 13.4816 101.235 12.7949C100.344 11.8336 97.6948 10.7578 97.7861 12.978C97.9003 16.2511 105.301 15.7247 103.702 19.3411C104.593 19.8676 106.329 20.7373 106.055 22.0191C105.712 23.6213 103.634 22.5913 103.679 24.6284C103.748 27.5124 106.877 29.8929 109.801 28.8629C112.907 27.7642 110.578 23.4153 114.141 22.9804C115.557 22.7973 116.379 23.2093 117.636 24.2164C118.664 25.0404 119.326 26.8716 120.742 26.7342C120.879 25.8644 120.217 25.2236 120.125 24.4224C121.222 24.6971 123.415 26.0704 124.054 27.0318C125.014 28.4738 124.899 30.5567 127.229 28.7027C126.887 28.4051 126.704 27.7871 126.521 27.5582C129.491 27.5582 131.569 28.7942 132.848 31.3807C135.704 37.1487 128.691 32.5709 128.349 35.5693C126.635 35.02 125.859 33.6238 124.351 32.7998C123.643 32.4107 122.318 32.6167 121.793 32.2276C121.039 31.6782 121.222 30.6711 120.559 30.1447C117.978 28.016 112.062 31.4493 109.687 32.8227C109.047 33.1889 108.362 33.2347 107.905 33.9442C107.151 35.1344 108.202 35.4549 107.974 36.5764C107.631 38.1787 105.552 38.9111 104.936 40.1929C103.428 43.26 106.489 47.6776 106.078 51.088C105.849 52.9878 103.816 55.0478 104.593 56.6271C104.936 57.3138 106.101 57.886 106.557 58.6871C106.969 59.4196 107.151 60.3809 107.677 61.1362C109.413 63.5853 111.925 66.332 113.981 68.6209C115.146 69.9256 116.722 70.2918 118.481 69.9256C119.92 69.628 122.113 69.1473 123.46 68.5064C125.242 67.6367 125.493 66.4464 127.366 67.2476C128.874 67.9113 130.176 69.8111 131.935 68.2318C133.374 69.6509 131.775 72.1 131.455 73.6793C131.044 75.6936 131.843 77.456 133.077 79.1498C134.562 81.2098 134.904 81.576 134.607 84.3227C134.379 86.4742 133.831 88.4198 133.374 90.5484C132.94 92.5856 131.638 94.1191 131.706 96.2707C131.775 98.262 132.62 99.8413 132.369 101.97C132.14 103.847 132.026 106.09 131.546 107.921C131.044 109.798 129.719 111.469 129.171 113.392C128.646 115.223 128.783 117.603 130.062 119.091C131.387 120.647 132.711 119.755 134.265 118.564C137.348 116.23 138.742 112.247 140.797 109.088C142.876 105.861 145 102.931 146.371 99.5667C146.668 98.8571 147.033 98.1476 147.376 97.4609C143.995 109.294 137.668 120.144 128.76 129.093H128.828Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_81_736'%3E%3Crect width='154' height='206' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+.value ul li:nth-child(4) {
+    background-color: #FCC400;
+}
+.value ul li:nth-child(4)::after {
+    width: 70%;
+    height: 70%;
+    bottom: -1.4em;
+    background-image: url(../images/value_icon4.png);
+}
+@media screen and (max-width:1440px){ /*17px*/
+    .value {
+        padding: 8em 0;
+    }
+    .value ul {
+        margin: 2em 0 0 0;
+    }
+    .value ul li {
+        position: relative;
+        width: 15em;
+        height: 13em;
+        padding: 2.5em 0 0 0;
+    }
+    .value ul li p {
+        font-size: 1.1rem;
+    }
+    .value .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .value .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    .value ul li h3 {
+        font-size: 2rem;
+    }
+    .value ul li::after {
+        width: 50%;
+        height: 50%;
+    }
+    .value ul li:nth-child(2)::after {
+        width: 50%;
+        height: 50%;
+    }
+    .value ul li:nth-child(3)::after {
+        width: 50%;
+        height: 50%;
+    }
+    .value ul li:nth-child(4)::after {
+        width: 65%;
+        height: 65%;
+        bottom: -0.5em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .value {
+        padding: 6em 0;
+    }
+    .value ul li h3 {
+        font-size: 1.7rem;
+    }
+    .value ul {
+        margin: 1.5em 0 0 0;
+    }
+    .value ul li {
+        width: 12em;
+        height: 12em;
+        border-radius: 1.5em;
+        padding: 1.8em 0 0 0;
+    }
+    .value ul li p {
+        font-size: 1rem;
+        padding: 1em 1.6em 1em 1.6em;
+    }
+    .value .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .value .title_txt h2 {
+        font-size: 2.3rem;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .value ul li h3 {
+        font-size: 1.5rem;
+    }
+    .value ul {
+        gap: 0.8em;
+        flex-wrap: wrap;
+        width: 22em;
+        margin: 1em auto; /*가운데 정렬*/
+    }
+    .value ul li {
+        width: calc((100% - 1.8em) / 2);
+        height: 10em;
+        border-radius: 1em;
+        padding: 1em 0 0 0;
+    }
+    .value ul li p {
+        font-size: 0.8rem;
+        padding: 1em 1.6em 1em 1.6em;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    .value {
+        padding: 6em 0;
+    }
+    .value .title_txt h2 {
+        font-size: 2.1rem;
+    }
+    .value ul {
+        width: 18em;
+    }
+    .value ul li {
+        height: 8em;
+        border-radius: 1.2em;
+        padding: 0.8em 0 0 0;
+    }
+    .value ul li p {
+        font-size: 0.7rem;
+        padding: 1em 1.6em 1em 1.6em;
+    }
+} /* @media */
+
+
+/*******---------campaign------*******/
+.campaign {
+    padding: 7em 0;
+}
+.campaign .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /*sticky 하려면 title_txt의 사이즈가 작아야 함. */
+    gap: 4em;
+}
+.campaign .title_txt {
+    position: sticky;
+    text-align: left;
+    top: 7em;
+    padding-bottom: 26em;
+    width: 40%;
+}
+.campaign .title_txt strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.campaign .title_txt h2 {
+    font-family: "Moneygraphy";
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0.11em 0 0.3em 0;
+}
+.campaign .cont_wrap {
+    width: 60%;
+}
+.campaign .accordion_wrap { 
+    position: relative;
+}
+.campaign .accordion_wrap .accordion { 
+    position: relative;
+    background-color: #fff;
+}
+.campaign .accordion_wrap .accordion .tit span {
+    display: block;
+    position: relative;
+    font-family: "Moneygraphy";
+    font-size: 1.8rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    padding: 0.8em 0 0.3em 0.2em;
+}
+.campaign .accordion_wrap .accordion .tit span::before {
+    content: "";
+    position: absolute;
+    left: -0.5em;
+    top: 0.5em;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: var(--point-color);
+}
+.campaign .accordion_wrap .accordion .tit.n02 span::before {
+    background-color: #FF5858;
+}
+.campaign .accordion_wrap .accordion .tit.n03 span::before {
+    background-color: #FCC400;
+}
+.campaign .accordion_wrap .accordion .tit.n04 span::before {
+    background-color: var(--main-color);
+}
+.campaign .accordion_wrap .accordion .tit.n05 span::before {
+    background-color: #777;
+}
+.campaign .accordion_wrap .accordion .tit.n06 span::before {
+    background-color: #83AFBA;
+}
+.campaign .accordion_wrap .accordion .photo {
+    overflow: hidden;
+    border-radius: 40px;
+    font-size: 0;
+    line-height: 0;
+    border: 2px solid #fff;
+}
+.campaign .accordion_wrap .accordion .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.campaign .accordion_wrap .accordion p {
+    font-size: 1.2rem;
+    color: #fff;
+    position: absolute;
+    left: 2em;
+    top: 6em;
+    margin-right: 1.5em;
+}
+.campaign .cont_wrap .final {
+    background-color: #fff;
+    height: 32em;
+}
+
+@media screen and (max-width:1440px){ /*17px*/
+    .campaign {
+        padding: 10em 0;
+    }
+    .campaign .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .campaign .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    .campaign .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+    .campaign .cont_wrap .final {
+        height: 26em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .campaign {
+        padding: 7em 0;
+    }
+    .campaign .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .campaign .title_txt h2 {
+        font-size: 2.3rem;
+    }
+    .campaign .accordion_wrap .accordion .photo {
+        border-radius: 30px;
+    }
+    .campaign .cont_wrap .final {
+        height: 20em;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .campaign {
+        padding: 2em 0;
+    }
+    .campaign .wrapper {
+        display: block; /*flex 해제*/
+    }
+    .campaign .title_txt {
+        position: relative;
+        top: 20px;
+        padding-bottom: 0;
+        padding-top: 2.8em;
+        width: 100%;
+    }
+    .campaign .cont_wrap {
+        width: 100%;
+    }
+    .campaign .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 2em;
+        top: 6.5em;
+    }
+    .campaign .accordion_wrap .accordion .tit span::before {
+        content: "";
+        position: absolute;
+        left: -0.3em;
+        top: 0.5em;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        background-color: var(--point-color);
+    }
+    .campaign .cont_wrap .final {
+        height: 36em;
+    }
+} /* @media */
+@media screen and (max-width: 540px){ /*15px*/
+    .campaign .cont_wrap .final {
+        height: 25em;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    .campaign .title_txt h2 {
+        font-size: 2.1rem;
+    }
+    .campaign .cont_wrap .final {
+        height: 21em;
+    }
+    .campaign .accordion_wrap .accordion .tit span {
+        font-size: 1.5rem;
+    }
+    .campaign .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 1.4em;
+        top: 5em;
+    }
+} /* @media */
+
+
+/*******---------project------*******/
+.project {
+    padding: 8em 0;
+    border-radius: 3em 3em 0 0;
+    background-color: var(--sub-color);
+    color: #fff;
+}
+.project .title_txt {
+    text-align: center;
+    margin-bottom: 2em;
+}
+.project .title_txt strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.project .title_txt h2 {
+    font-family: "Moneygraphy";
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0.11em 0 0.3em 0;
+}
+.project .swiper ul {
+	transition-timing-function: linear;
+}
+.project .swiper ul li {
+    width: 16.7em;
+    height: 16.7em;
+}
+.project .swiper ul li a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.project .swiper ul li a .photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    font-size: 0;
+    line-height: 0;
+}
+.project .swiper ul li a .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.3;
+    z-index: 1;
+    transition: 0.7s;
+}
+.project .swiper ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project .swiper ul li a:hover .photo::before {
+    opacity: 0;
+}
+.project .swiper ul li a .project_txt {
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+    display: flex;
+    align-items: flex-end;
+    max-width: calc(100% - 2em);
+}
+.project .swiper ul li a .project_txt span {
+    padding: 0.125em 0.625em;
+    background-color: var(--point-color);
+    border-radius: 0.625em;
+    margin: 0 0.5em 0 0;
+}
+.project .swiper ul li a .project_txt span.frs {
+    background-color: var(--main-color);
+}
+.project .swiper ul li a .project_txt span.cli {
+    background-color: #FCC400;
+}
+.project .swiper ul li a .project_txt span.heal {
+    background-color: #FF5858;
+}
+.project .swiper ul li a .project_txt span.pla {
+    background-color: #777;
+}
+.project .swiper ul li a .project_txt span.arc {
+    background-color: #83AFBA;
+}
+.project .swiper ul li a .project_txt h3 {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width:1440px){ /*17px*/
+    .project {
+        padding: 8em 0;
+    }
+    .project .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .project .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    .project .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .project {
+        padding: 5em 0;
+    }
+    .project .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .project .title_txt h2 {
+        font-size: 2.3rem;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .project .swiper ul li {
+        width: 14em;
+        height: 14em;
+    }
+    .project .swiper ul li a .photo::before {
+        opacity: 0;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    .project .title_txt h2 {
+        font-size: 2.1rem;
+    }
+} /* @media */
+
+/*******---------support------*******/
+.support {
+    padding: 10em 0 10em 0;
+    background-color: #E6F5F5;
+    text-align: center;
+    align-items: center;
+}
+.support h2 {
+    font-family: "Moneygraphy";
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0.11em 0 1em 0;
+}
+.support .cont_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+.support .cont_wrap .swiper {
+    width: 50%;
+    margin: 0;
+}
+.support .cont_wrap .swiper ul li a {
+    display: inline-block;
+}
+.support .cont_wrap .swiper ul li a .photo {
+    overflow: hidden;
+    border-radius: 20px;
+    font-size: 0;
+    line-height: 0
+}
+.support .cont_wrap .swiper ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.support .cont_wrap .cont_txt {
+    width: 33.34em;
+    text-align: left;
+    margin: 1.4em 0 0 0;
+}
+.support .cont_wrap .cont_txt h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.support .cont_wrap .cont_txt p {
+    margin: 1.3em 0 0 0.2em;
+}
+.support .cont_wrap .cont_txt p span.resize {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.support .cont_wrap .cont_txt p span.underline {
+    position: relative;
+    font-weight: 600;
+
+}
+.support .cont_wrap .cont_txt p span.underline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;
+    width: 100%;
+    height: 2px;
+    background-color: #555;
+}
+.support .cont_wrap .cont_txt p span.backcolor {
+    background-color: var(--point-color);
+    color: #fff;
+    padding: 0.2em 0.4em;
+}
+.support .cont_wrap .cont_txt a {
+    display: block;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--point-color);
+    padding: 0.9em 0 0.9em 2.6em;
+    border-radius: 1em 2.4em 2.4em 1em;
+    margin: 4em 0 0 0;
+}
+.support .cont_wrap .cont_txt a::before {
+    content: "";
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    transform: translateY(-50%);
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 26.25L13.1875 24.625C11.0833 22.7292 9.34375 21.0938 7.96875 19.7188C6.59375 18.3438 5.5 17.1094 4.6875 16.0156C3.875 14.9219 3.30729 13.9167 2.98438 13C2.66146 12.0833 2.5 11.1458 2.5 10.1875C2.5 8.22917 3.15625 6.59375 4.46875 5.28125C5.78125 3.96875 7.41667 3.3125 9.375 3.3125C10.4583 3.3125 11.4896 3.54167 12.4688 4C13.4479 4.45833 14.2917 5.10417 15 5.9375C15.7083 5.10417 16.5521 4.45833 17.5312 4C18.5104 3.54167 19.5417 3.3125 20.625 3.3125C22.5833 3.3125 24.2188 3.96875 25.5312 5.28125C26.8438 6.59375 27.5 8.22917 27.5 10.1875C27.5 11.1458 27.3385 12.0833 27.0156 13C26.6927 13.9167 26.125 14.9219 25.3125 16.0156C24.5 17.1094 23.4062 18.3438 22.0312 19.7188C20.6562 21.0938 18.9167 22.7292 16.8125 24.625L15 26.25ZM15 22.875C17 21.0833 18.6458 19.5469 19.9375 18.2656C21.2292 16.9844 22.25 15.8698 23 14.9219C23.75 13.974 24.2708 13.1302 24.5625 12.3906C24.8542 11.651 25 10.9167 25 10.1875C25 8.9375 24.5833 7.89583 23.75 7.0625C22.9167 6.22917 21.875 5.8125 20.625 5.8125C19.6458 5.8125 18.7396 6.08854 17.9062 6.64063C17.0729 7.19271 16.5 7.89583 16.1875 8.75H13.8125C13.5 7.89583 12.9271 7.19271 12.0938 6.64063C11.2604 6.08854 10.3542 5.8125 9.375 5.8125C8.125 5.8125 7.08333 6.22917 6.25 7.0625C5.41667 7.89583 5 8.9375 5 10.1875C5 10.9167 5.14583 11.651 5.4375 12.3906C5.72917 13.1302 6.25 13.974 7 14.9219C7.75 15.8698 8.77083 16.9844 10.0625 18.2656C11.3542 19.5469 13 21.0833 15 22.875Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.support .cont_wrap .cont_txt a span {
+    position: relative;
+}
+.support .cont_wrap .cont_txt a span::after {
+    content: "";
+    position: absolute;
+    right: -2em;
+    top: 50%;
+    width: 1.6em;
+    height: 1.6em;
+    transform: translateY(-50%);
+    background-image: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.9232 27.9519L20.2544 26.2348L26.3015 20.1876H7.125V17.8126H26.3015L20.2544 11.7655L21.9232 10.0483L30.875 19.0001L21.9232 27.9519Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: 1.2s;
+}
+.support .cont_wrap .cont_txt a:hover span::after {
+    right: -15em;
+}
+@media screen and (max-width:1440px){ /*17px*/
+    .support {
+        padding: 8em 0;
+    }
+    .support h2 {
+        font-size: 2.5rem;
+    }
+    .support .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+    .support .cont_wrap .cont_txt {
+        width: 30em;
+        margin: 0.5em 0 0 0;
+    }
+    .support .cont_wrap .cont_txt a {
+        font-size: 1.2rem;
+        margin: 1em 0 0 0;
+    }
+    .support .cont_wrap .cont_txt p br {
+        display: none;
+    }
+    
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .support {
+        padding: 5em 0;
+    }
+    .support h2 {
+        font-size: 2.3rem;
+    }
+    .support .cont_wrap .cont_txt {
+        width: 50%;
+        margin: 0.5em 0 0 0;
+    }
+    .support .cont_wrap .cont_txt a:hover span::after {
+        right: -150px;
+    }
+    .support .cont_wrap .cont_txt h3 {
+        font-size: 1.2rem;
+    }
+    .support .cont_wrap .cont_txt p {
+        margin: 0.7em 0 0 0.2em;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .support .cont_wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    .support .cont_wrap .swiper {
+        width: 100%;
+    }
+    .support .cont_wrap .swiper ul li a {
+        padding: 0 4em;
+    }
+    .support .cont_wrap .cont_txt {
+        width: 100%;
+        margin: 0.5em 0 0 0;
+        padding: 0 4em;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    .support h2 {
+        font-size: 2.1rem;
+    }
+    .support .cont_wrap .swiper ul li a {
+        padding: 0;
+    }
+    .support .cont_wrap .cont_txt {
+        padding: 0;
+    }
+} /* @media */
+
+
+
+/*******---------news------*******/
+.news {
+    padding: 8.5em 0;
+    background-color: #fff;
+}
+.news .title_txt {
+    text-align: center;
+    margin-bottom: 2em;
+}
+.news .title_txt strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.news .title_txt h2 {
+    font-family: "Moneygraphy";
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0.11em 0 0.3em 0;
+}
+.news .swiper ul li {
+    display: flex;
+    justify-content: center;
+    padding: 0 0.55em 1em 0.55em;
+}
+.news .swiper ul li a {
+    display: block;
+    transition: 0.5s;
+}
+.news .swiper ul li a:hover {
+    transform: scale(0.98);
+}
+.news .swiper ul li a .photo {
+    overflow: hidden;
+    border-radius: 40px 40px 0 0;
+    font-size: 0;
+    line-height: 0;
+    border: 2px solid #111;
+    transition: 0.5s;
+}
+.news .swiper ul li a:hover .photo {
+    box-shadow: 6px 0 8px rgba(0,0,0,0.2);
+}
+.news .swiper ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.news .swiper ul li a .news_txt {
+    background-color: #fff;
+    border: 2px solid #111;
+    border-top: 0;
+    border-radius: 0 0 2.2em 2.2em;
+    padding: 1em 1em;
+    overflow: hidden;
+    height: 10.1em;
+    transition: 0.5s;
+    position: relative; /*p(날짜)의 하단 정렬의 기준*/
+}
+.news .swiper ul li a:hover .news_txt {
+    box-shadow: 6px 6px 8px rgba(0,0,0,0.2);
+}
+.news .swiper ul li a .news_txt span {
+    padding: 0.25em 0.625em;
+    background-color: var(--point-color);
+    border-radius: 0.625em;
+    color: #fff;
+}
+.news .swiper ul li a .news_txt span.frs {
+    background-color: var(--main-color);
+}
+.news .swiper ul li a .news_txt span.cli {
+    background-color: #FCC400;
+}
+.news .swiper ul li a .news_txt span.heal {
+    background-color: #FF5858;
+}
+.news .swiper ul li a .news_txt span.pla {
+    background-color: #777;
+}
+.news .swiper ul li a .news_txt span.arc {
+    background-color: #83AFBA;
+}
+.news .swiper ul li a .news_txt h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin: 0.5em 0.3em 0.9em 0.3em;
+}
+.news .swiper ul li a .news_txt p {
+    position: absolute; /*news_txt를 기준으로 정렬*/
+    left: 0;
+    bottom: 0;
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 0 1.2em 1.6em;
+}
+@media screen and (max-width:1440px){ /*17px*/
+    .news {
+        padding: 8em 0;
+    }
+    .news .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .news .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    .news .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .news {
+        padding: 5em 0;
+    }
+    .news .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .news .title_txt h2 {
+        font-size: 2.3rem;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:380px){ /*14px*/
+    .news {
+        padding: 4em 0 3em 0;
+    }
+    .news .title_txt h2 {
+        font-size: 2.1rem;
+    }
+} /* @media */
+
+
+/*******---------subscribe------*******/
+.subscribe {
+    position: relative;
+    padding: 6.6em 0;
+    border-radius: 3.4em 3.4em 0 0;
+    background-color: var(--point-color);
+    color: #fff;
+    overflow: hidden;
+}
+.subscribe .wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+.subscribe .title_txt {
+    text-align: left;
+    width: 40%;
+}
+.subscribe .title_txt strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.subscribe .title_txt h2 {
+    font-family: "Moneygraphy";
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0.11em 0 0.3em 0;
+}
+.subscribe .cont_wrap {
+    width: 60%;
+    text-align: right;
+    margin-top: 1.9em;
+}
+.subscribe .cont_wrap .input_box {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 0 0 0.6em 0;
+    font-size: 1.2rem;
+}
+.subscribe .cont_wrap .input_box .input_tit {
+    width: 10%;
+}
+.subscribe .cont_wrap .input_box .field { 
+    width: 90%;
+    height: 2.3em;
+    padding: 0 1.5em;
+    border-radius: 2em;
+    background-color: var(--point-color);
+    border: 1px solid #fff;
+    color: #fff;
+}
+.subscribe .cont_wrap .check_box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.subscribe .cont_wrap .check {
+    width: 1px;
+    height: 1px;
+    border: 0;
+    background-color: #fff;
+}
+.subscribe .cont_wrap .agree {
+    margin: 0 45% 0 0.4em;
+    display: inline-block;
+    position: relative;
+}
+.subscribe .cont_wrap .agree::before {
+    content: "";
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+    background-color: #fff;
+}
+.subscribe .cont_wrap input:checked+.agree::before {
+    background-image: url(../images/checked.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.subscribe .cont_wrap .scb_btn {
+    background-color: #fff;
+    color: var(--point-color);
+    font-size: 1.2rem;
+    border-radius: 1.5em;
+    border: 0;
+    padding: 0.7em 3.6em 0.7em 2em;
+    /* input은 before/after가 없음 - 배경을 input에 줘야함 */
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.577 19.8606L14.3913 18.6405L18.6879 14.3439H5.0625V12.6564H18.6879L14.3913 8.35971L15.577 7.13965L21.9375 13.5001L15.577 19.8606Z' fill='%23176E84'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center right+21px;
+    background-size: 1.6em;
+    cursor: pointer; /* 오버했을때 마우스 포인터 손가락으로 변경 */
+    margin: 2em 0 0 0;
+    font-weight: 600;
+}
+.subscribe .ai01 {
+    position: absolute;
+    left: 6%;
+    top: 3em;
+    width: 36em;
+    height: 9em;
+    background-image: url(../images/subscribe_ai01.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+
+    animation-name: slidein;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; /*가속도 없애기*/    
+}
+.slidein {
+    animation-duration: 10s;
+    animation-name: slidein;
+    animation-iteration-count: 10;
+    animation-direction: alternate;
+}
+@keyframes slidein {
+    0% {
+        left: 2%;
+    }
+    50% { 
+        left: 10%;
+    }
+    100% {
+        left: 2%;
+    }
+}
+.subscribe .ai02 {
+    position: absolute;
+    left: 0;
+    bottom: 1.6em;
+    width: 12em;
+    height: 7em;
+    background-image: url(../images/subscribe_ai02.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+}
+.subscribe .ai03 {
+    position: absolute;
+    left: 0;
+    bottom: -1.4em;
+    width: 107em;
+    height: 8em;
+    background-image: url(../images/subscribe_ai03.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+}
+@media screen and (max-width:1440px){ /*17px*/
+    .subscribe {
+        padding: 10em 0;
+    }
+    .subscribe .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .subscribe .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    .subscribe .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .subscribe {
+        padding: 7em 0;
+    }
+    .subscribe .wrapper {
+        display: block; /*flex해제*/
+    }
+    .subscribe .title_txt {
+        width: 100%;
+    }
+    .subscribe .cont_wrap {
+        width: 100%;
+    }
+    .subscribe .ai01 {
+        animation-duration: 30s;   
+    }
+    .slidein {
+        animation-duration: 30s;
+        animation-iteration-count: 30;
+    }
+    @keyframes slidein {
+        0% {
+            left: 2%;
+        }
+        50% { 
+            left: 50%;
+        }
+        100% {
+            left: 2%;
+        }
+    }
+    .subscribe .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .subscribe .title_txt h2 {
+        font-size: 2.3rem;
+    }
+    
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .subscribe .cont_wrap .agree {
+        margin: 2em 0 0 0.4em;
+    }
+    .subscribe .cont_wrap .input_box {
+        display: block; /*flex 해제*/
+        margin: 0 0 0.6em 0;
+        font-size: 1.1rem;
+    }
+    .subscribe .cont_wrap .input_box .input_tit {
+        width: 25%;
+        margin-right: 0.6em;
+    }
+    .subscribe .cont_wrap .input_box .field { 
+        width: 75%;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    .subscribe .title_txt h2 {
+        font-size: 2.1rem;
+    }
+    .news .swiper ul li {
+        padding: 0 2em 1em 2em;
+    }
+} /* @media */

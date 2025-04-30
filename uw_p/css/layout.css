@@ -1,0 +1,136 @@
+/* layout.css */
+
+.skipnav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.skipnav a {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    width: 100%;
+    display: block;
+    background-color: #57820D;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+.skipnav a.menu {
+    background-color: #0B3F8C;
+}
+.skipnav a:focus{
+    top: 0;
+}
+.header { 
+    position: fixed; 
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 50px;
+    padding: 0 6%;    
+    background-color: #E6E6E6;
+    border-top: 2px solid #111;
+    border-bottom: 2px solid #111;
+    text-align: center;
+}
+.header .wrapper {
+    padding: 0.7em 6%;
+}
+
+.header ul { 
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.header ul li {
+    width: 25%;
+    height: 46px;
+    border-left: 2px solid #111;
+}
+.header ul li:last-child {
+    border-right: 2px solid #111;
+}
+.header ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em 0;
+    position: relative;
+}
+.header ul li.active a { 
+    background-color: #333;
+    color: #fff;
+}
+.header ul li.as.active a span, .header ul li.gr.active a span {
+    color: #fff;
+}
+.header ul li a span {
+    display: inline-block;
+    position: relative;
+    
+}
+.header ul li.pi a span {
+    font-family: '116watermelon';
+    font-size: 1.2em;
+}
+.header ul li.as a span {
+    font-size: 1em;
+    color: #1d1d1d;
+    padding: 0.2em 0 0 1.5em;
+}
+.header ul li.gr a span {
+    font-family: 'Moneygraphy';
+    font-size: 0.9em;
+    color: #57820D;
+    padding: 0.4em 0 0 2em;
+}
+.header ul li a span::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.header ul li.as a span::after {
+    left: 0;
+    top: -9px;
+    width: 20px;
+    height: 48px;
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='17' height='17' fill='%23111111'/%3E%3Crect x='1.53027' y='1.87012' width='13.94' height='13.43' fill='%23111111'/%3E%3Cpath d='M5.02411 3.21094H2.83301V13.664H5.02411V3.21094Z' fill='white'/%3E%3Cpath d='M12.7272 3.21094H10.5361V13.664H12.7272V3.21094Z' fill='white'/%3E%3Cpath d='M14.267 13.2505H3.05078V13.666H14.267V13.2505Z' fill='white'/%3E%3Cpath d='M9.95823 3.21094H4.50879V3.62649H9.95823V3.21094Z' fill='white'/%3E%3Cpath d='M10.8914 5.49854H5.71777V5.91409H10.8914V5.49854Z' fill='white'/%3E%3Cpath d='M9.8793 7.78613H4.49219V9.10647H9.8793V7.78613Z' fill='white'/%3E%3Cpath d='M11.3297 10.9707H5.71973V11.3863H11.3297V10.9707Z' fill='white'/%3E%3Cpath d='M15.6778 15.3002H1.32227V10.2292L1.32227 1.70028L15.6778 1.7002V15.3002ZM1.86967 14.7028H15.1304V2.29763H1.86967V10.3612V14.7022V14.7028Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.header ul li.gr a span::after {
+    left: 3px;
+    top: -8px;
+    width: 20px;
+    height: 48px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='18' viewBox='0 0 16 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_239_2361)'%3E%3Cpath d='M12.1905 0H3.80952C1.70558 0 0 1.67893 0 3.75V14.25C0 16.3211 1.70558 18 3.80952 18H12.1905C14.2944 18 16 16.3211 16 14.25V3.75C16 1.67893 14.2944 0 12.1905 0Z' fill='%2357820D'/%3E%3Cpath d='M11.2483 10.8965C11.6175 10.1379 12.4853 9.11787 11.8959 8.1935C11.5203 7.607 6.89631 8.21262 6.57898 8.86925C5.65936 10.7754 9.61631 9.28362 10.3028 9.494C11.0475 10.208 7.40145 11.0814 6.90279 11.0622C5.36793 11.0112 4.87574 9.64062 5.61402 8.37837C5.95079 7.79825 8.78736 5.057 9.34431 5.45225C9.48678 5.55425 9.49974 6.45312 10.0696 6.54237C11.8312 6.81012 10.8079 4.13262 9.55155 3.91587C7.99726 3.65449 4.73326 6.66987 4.09859 7.9895C2.75803 10.7817 4.95345 12.7707 7.82888 12.4392C8.43764 12.3691 9.01402 12.0376 9.55155 11.9356C9.66812 11.9101 9.8106 11.7699 9.82355 11.9866C9.88183 12.5221 9.73936 13.1915 9.82355 13.7015C9.95307 14.5047 11.1123 14.5111 11.2483 13.7015C11.3843 12.8791 11.1512 11.7635 11.2483 10.8965Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_239_2361'%3E%3Crect width='16' height='18' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+/*********-------footer-----------***********/
+footer {
+    padding: 100px 0 100px 0;
+    background-color: #111;
+    color: #fff;
+    font-family: '116watermelon';
+    letter-spacing: 0; 
+}
+footer .thanks {
+    text-align: left;
+}
+footer .thanks strong {
+    font-size: 3em;
+}
+footer .thanks h2 {
+    font-size: 13em; 
+    margin-bottom: 1.6em;
+    line-height: 1;
+}
+footer .copyright {
+    font-size: 2em;
+    text-align: right;
+
+}

@@ -1,0 +1,201 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js/jquery-3.7.1.min.js"></script> <!--jquery(라이브러리) js 호출-->
+    <script src="js/main.js"></script> <!--javascript 호출-->
+    <script src="js/common.js"></script> <!--javascript 호출-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link rel="stylesheet" href="css/main.css"> <!--css 호출-->
+
+    <link rel="shortcut icon" type="image/x-icoon" href="favicon.svg">
+    <title>fortfolio.sy</title>
+</head>
+<body>
+    <div class="skipnav">
+        <a class="cnt" href="#skip_content">본문 바로가기</a>
+        <a class="menu" href="#skip_nav">주메뉴 바로가기</a>
+    </div>
+    <div id="wrap">
+        <header class="header">
+            <ul> 
+                <li data-link="portfolio" class="pi"><a href="#n"><span>Portfolio</span></a></li> 
+                <li data-link="profile" class="pi"><a href="#n"><span>Profile</span></a></li>
+                <li data-link="index" class="pi"><a href="#n"><span>Index</span></a></li>
+                <li data-link="assemble" class="as"><a href="#n"><span>Assemble</span></a></li>
+                <li data-link="greenpeace" class="gr"><a href="#n"><span>Greenpeace</span></a></li>
+            </ul>
+        </header>
+        <main class="container">
+            <section data-menu="portfolio" class="portfolio">
+                <div class="wrapper">
+                    <div class="title">
+                        <h2>
+                            <span class="tpo">The Power of</span>
+                            <span class="que">?</span>
+                            <span class="wh">wh</span>
+                            <span class="yy">y</span>
+                        </h2>
+                    </div>
+                    <div class="writing"><span>저는 질문하는 웹퍼블리셔입니다.</span></div>	
+                    <div class="explan">
+                        <p>Web Publisher Portfolio</p>
+                        <p>March 2025.</p>
+                    </div>
+                </div><!--wrapper-->
+            </section>
+            <section data-menu="profile" class="profile">
+                <div class="wrapper">
+                    <div class="title">
+                        <h1>Profile</h1>
+                        <strong>프로필</strong>
+                    </div>
+                    <div class="name">
+                        <h2>김신영</h2>
+                        <strong>Kim shin young</strong>
+                    </div>
+                    <div class="file_cnt">
+                        <div class="photo"><img src="images/profile_img.jpg" alt="김신영의 사진"></div>
+                        <div class="contect">
+                            <h2>Contect</h2>
+                            <div class="tect_cnt">
+                                <span>010-7270-5543</span>
+                                <span>tlsdud4325@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <div class="list">
+                                <h4>생년월일 Birth</h4>
+                                <p>2001.05.18 (만 23세)</p>
+                            </div>
+                            <div class="list">
+                                <h4>교육 Education</h4>
+                                <div class="edu_cnt">
+                                    <span>2020.03. - 2024.02.</span>
+                                    <p>한남대학교 컴퓨터공학과</p>
+                                </div>
+                                <div class="edu_cnt">
+                                    <span>2024.10. - 2025.03.</span>
+                                    <p>UIUX 반응형 웹디자인&웹퍼블리싱</p>
+                                </div>
+                            </div>
+                            <div class="list">
+                                <h4>자격 Lisence </h4>
+                                <p>2024.12.13 GTQ(그래픽기술자격) 1급</p>
+                            </div>
+                            <div class="list">
+                                <h4>기술 Skill</h4>
+                                <div class="skill_cnt">
+                                    <strong>Publishing</strong>
+                                    <ul>
+                                        <li class="html"><span>Html</span></li>
+                                        <li class="css"><span>Css</span></li>
+                                        <li class="js"><span>JavaScript</span></li>
+                                        <li class="jq"><span>Jquery</span></li>
+                                        <li class="vs"><span>VSCode</span></li>
+                                        <li class="gitHub"><span>GitHub</span></li>
+                                    </ul>
+                                </div><!--skill_cnt-->
+                                <div class="skill_cnt">
+                                    <strong>Design</strong>
+                                    <ul>
+                                        <li class="fig"><span>Figma</span></li>
+                                        <li class="ps"><span>Photoshop</span></li>
+                                        <li class="ai"><span>Illustrator</span></li>
+                                        <li class="xd"><span>Xd</span></li>
+                                    </ul>
+                                </div><!--skill_cnt-->
+                                <div class="skill_cnt">
+                                    <strong>Documentation</strong>
+                                    <ul>
+                                        <li class="hwp"><span>Hwp</span></li>
+                                        <li class="exl"><span>Excel</span></li>
+                                        <li class="ppt"><span>PPT</span></li>
+                                    </ul>
+                                </div><!--skill_cnt-->
+                            </div>
+                        </div><!--details-->
+                    </div><!--file_cnt-->
+                </div>
+            </section><!--profile-->
+            <section data-menu="index" class="index">
+                <div class="wrapper">
+                    <div class="title">
+                        <h1>Index</h1>
+                        <strong>색인</strong>
+                    </div>
+                    <ul>
+                        <li><a href="#assemble" class="proj01">01  Assemble</a></li>
+                        <li><a href="#greenpeace" class="proj02">02  Greenpeace</a></li>
+                    </ul>
+                </div>
+            </section><!--index-->
+            <section data-menu="assemble" class="assemble" id="assemble">
+                <div class="wrapper">
+                    <div class="title">
+                        <h1>Assemble</h1>
+                        <strong>p.01</strong>
+                    </div>
+                    <div class="intro">
+                        <div class="photo"><img src="images/assemble_mockup_img.jpg" alt="어셈블 개편 사이트 노트북 목업 사진"></div>
+                        <div class="intro_cnt">
+                            <div class="renewal">
+                                <h3>Renewal</h3>
+                                <p>기존 사이트의 정적이고 고루한 느낌을 탈피하고, <br><span>단순</span>하되 <span>현대적</span>인 디자인으로 사용자 경험을 개선했습니다. <br><span>명확</span>하고 <span>반응적</span>인 UI/UX를 적용하여 <br>필요한 정보에 대한 고객들의 접근성을 높였습니다.</p>
+                            </div>
+                            <div class="link">
+                                <a href="assemble/index.html" target="_blank" title="새창열기">
+                                    <h3>Go to homepage</h3>
+                                    <p>홈페이지 바로가기</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="design"><img src="images/assemble_design_img.png" alt="디자인 사진"></div>
+                </div><!--wrapper-->
+            </section><!--assemble-->
+            <section data-menu="greenpeace" class="greenpeace" id="greenpeace">
+                <div class="wrapper">
+                    <div class="title">
+                        <h1>GREENPEACE</h1>
+                        <strong>p.02</strong>
+                    </div>
+                    <div class="intro">
+                        <div class="photo"><img src="images/greenpeace_mockup_img.jpg" alt="그린피스 개편 사이트 노트북 목업 사진"></div>
+                        <div class="intro_cnt">
+                            <div class="renewal">
+                                <h3>Renewal</h3>
+                                <p>환경 보호에 대한 <span>긍정적</span>이고 <span>희망적</span>인 메시지를 전달하기 위해 <br>
+                                    <span>밝고 환한 컬러</span> 팔레트와 <span>둥글고 부드러운 타이포그래피</span>를 활용하여 <br>
+                                    시각적으로 생동감 넘치고 친근한 경험을 제공하였습니다. 
+                                </p>
+                            </div>
+                            <div class="link">
+                                <a href="greenpeace/index.html" target="_blank" title="새창열기">
+                                    <h3>Go to homepage</h3>
+                                    <p>홈페이지 바로가기</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="design"><img src="images/greenpeace_design_img.png" alt="디자인 이미지"></div>
+                </div><!--wrapper-->
+                <div class="screen"><div class="photo"><img src="images/greenpeace_screen_img.png" alt="구현화면 이미지"></div></div>
+            </section><!--greenpeace-->
+        </main>
+        <footer>
+            <div class="wrapper">
+                <div class="thanks">
+                    <strong>귀한 시간 내어 주셔서</strong>
+                    <h2>감사합니다.</h2>
+                </div>
+                <div class="copyright">Copyright shinyoung 2025. All rights reserved.</div>
+            </div><!--wrapper-->
+        </footer>
+    </div>
+</body>
+</html>

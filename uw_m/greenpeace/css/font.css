@@ -1,0 +1,41 @@
+/* 웹폰트 파일을 이용해서 웹폰트의 이름과 두께 등을 선언 */
+
+/*제목 폰트*/
+@font-face {
+	font-family: 'Moneygraphy';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Moneygraphy Rounded'), url(../fonts/Moneygraphy-Rounded.woff2) format('woff2'), url(../fonts/Moneygraphy-Rounded.woff) format('woff');
+}
+
+
+
+/*본문 폰트*/
+/* local 만약 당신의 컴퓨터에 서체가 깔려있다면 그걸 먼저 사용해라 뜻 */
+@font-face {
+		font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), url(../fonts/Pretendard-SemiBold.woff2) format('woff2'), url(../fonts/Pretendard-SemiBold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), url(../fonts/Pretendard-Medium.woff2) format('woff2'), url(../fonts/Pretendard-Medium.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}

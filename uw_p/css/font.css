@@ -1,0 +1,70 @@
+/*LibreBodoni : 어셈블 영문*/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
+
+/*116 수박화체 116watermelon : 포트폴리오 제목*/
+@font-face {
+	font-family: '116watermelon';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116watermelon.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*프리텐다드 : 어셈블 국문, 그린피스 본문*/
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), url(../fonts/Pretendard-SemiBold.woff2) format('woff2'), url(../fonts/Pretendard-SemiBold.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+
+
+
+/*머니그라피 Moneygraphy : 그린피스 제목*/
+@font-face {
+	font-family: 'Moneygraphy';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Moneygraphy Rounded'), url(../fonts/Moneygraphy-Rounded.woff2) format('woff2'), url(../fonts/Moneygraphy-Rounded.woff) format('woff');
+}
+
+
+/*에스코어드림 S-Core Dream : 포트폴리오 본문*/
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 600;
+	font-display: swap;
+	src: local('S-Core Dream Bold'), url(../fonts/SCoreDreamBold.woff2) format('woff2'), url(../fonts/SCoreDreamBold.woff) format('woff');
+}
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 500;
+	font-display: swap;
+	src: local('S-Core Dream Medium'), url(../fonts/SCoreDreamMedium.woff2) format('woff2'), url(../fonts/SCoreDreamMedium.woff) format('woff');
+}
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 400;
+	font-display: swap;
+	src: local('S-Core Dream Regular'), url(../fonts/SCoreDreamRegular.woff2) format('woff2'), url(../fonts/SCoreDreamRegular.woff) format('woff');
+}
+
+
+
+
+
+
+
+
