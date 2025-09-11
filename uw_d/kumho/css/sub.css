@@ -1,0 +1,438 @@
+/*
+ * sub.css
+ * 서브 레이아웃 (공통사항, tab, sub_visual) 스타일
+ * 다른 css import 
+ */
+ @import url(default.css);
+ @import url(font.css);
+ @import url(common.css);
+ @import url(layout.css); 
+ @import url(contents.css);
+
+
+ /* 상단 메뉴가 미리 선택되어있는 스타일 */
+
+header .gnb .gnb_wrap ul.depth1 > li.active > a {
+    position: relative; /*after 정렬의 기준*/
+}
+header.menu_pc .gnb .gnb_wrap ul.depth1 > li.active > a {
+    color: #CE0112;
+}
+header.fixed .gnb .gnb_wrap ul.depth1 > li.active > a {
+    color: #CE0112;  
+}
+header .gnb .gnb_wrap ul.depth1 > li.active > a::after {
+    content: "";
+    position: absolute;/*a를 기준으로 정렬*/
+    right: 0;
+    bottom: -2px;
+    height: 5px;
+    width: 100%;
+    background-color: #CE0112;
+    z-index: 10;
+}
+header .gnb .gnb_wrap ul.depth1 > li.active > ul.depth2 > li.active > a {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #CE0112;
+}
+header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
+    color: #fff;
+}
+
+@media screen and (max-width:1000px){ 
+    header .gnb .gnb_wrap ul.depth1 > li.active > a::after {
+        height: 0;
+        width: 0;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.active > a {
+        background-color: #CE0112;
+        color: #fff;
+        font-weight: 700;
+    }
+    header.menu_mo.fixed .gnb .gnb_wrap ul.depth1 > li.active > a {
+        background-color: #CE0112;
+        color: #fff;
+        font-weight: 700;
+    }
+    
+} /* @media */
+
+ 
+.sub_visual {
+    position: relative; /* snb의 정렬의 기준*/
+    height: 39.7647em; /*676px*/
+    background: url(../images/sub/sub_visual_bg01.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.sub_visual.bg1 {
+    background-image: url(../images/sub/sub_visual_bg01.jpg);
+}
+.sub_visual.bg2 {
+    background-image: url(../images/sub/sub_visual_bg02.jpg);
+}
+.sub_visual.bg3 {
+    background-image: url(../images/sub/sub_visual_bg03.jpg);
+}
+.sub_visual.bg4 {
+    background-image: url(../images/sub/sub_visual_bg04.jpg);
+}
+.sub_visual.bg5 {
+    background-image: url(../images/sub/sub_visual_bg05.jpg);
+}
+.sub_visual.bg6 {
+    background-image: url(../images/sub/sub_visual_bg06.jpg);
+}
+.sub_visual.bg7 {
+    background-image: url(../images/sub/sub_visual_bg07.jpg);
+}
+.sub_visual .sub_txt strong {
+    display: none;
+}
+.sub_visual .sub_txt span {
+    display: block;
+    font-size: 2.6471rem; /*45px*/
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 7.7333em 0 0 0; /*348px- 45px 기준으로 환산*/
+}
+.sub_visual .snb {
+    position: absolute; /*sub_visual을 기준으로 정렬*/
+    left: 0;   /* 하위메뉴 bar를 전체 브라우저 너비에 꽉 차지 않게 디자인 했다면 - 0 대신에 calc(50% - 630px)을 준다.  630px은 1260px의 반*/
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(29,29,29,0.6);
+    overflow-x: auto; /* 가로스크롤 허용 */
+}
+.sub_visual .snb ul {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1260px; 
+    width: 100%;
+}
+.sub_visual .snb ul li {
+    width: 50%;
+    border-left: 1px solid #fff;
+}
+.sub_visual .snb ul li a {
+    background-color: rgba(29,29,29,0.6);
+    white-space: nowrap; /*한 줄 제한*/
+    padding: 0 1.7143em;
+}
+.sub_visual .snb ul li:first-child {
+    border-left: 0;
+}
+
+/******--------여기 확인하기-------------꼭!!!!!!*********/
+.sub_visual .snb ul li a {
+    display: block;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    line-height: 3.5294em; /*76px*/
+    white-space: nowrap; /*무조건 한줄로 나오게 -줄바꿈 금지*/
+    z-index: 100;
+}
+.sub_visual .snb ul li.active a, .sub_visual .snb ul li a:hover {
+    font-weight: 700;
+    color: #CE0112;
+    background-color: #fff;
+}
+/******--------여기 확인하기-------------꼭!!!!!!*********/
+
+
+@media screen and (max-width:1300px){ /*16px*/
+    .sub_visual .sub_txt span {
+        font-size: 2.5rem; /*40px*/
+        padding: 9em 0 0 0; /*360px- 40px 기준으로 환산*/
+    }
+} /* @media */
+
+@media screen and (max-width:1000px){ /*15px*/
+    .sub_visual {
+        height: 30.6667em; /*460px*/
+    }
+    .sub_visual .sub_txt span {
+        font-size: 2.3333rem; /*35px*/
+        padding: 7.4286em 0 0 0 ; /*348px- 35px 기준으로 환산*/
+    }
+    .sub_visual .snb {
+        left: 0;   /* 하위메뉴 bar를 전체 브라우저 너비에 꽉 차지 않게 디자인 했다면 - 0 대신에 calc(50% - 630px)을 준다.  630px은 1260px의 반*/
+        bottom: 0;
+    }
+    .sub_visual .snb ul li a {
+        line-height: 3.5294em; /*76px*/
+    }
+} /* @media */
+
+@media screen and (max-width:760px){ /*14px*/
+    .sub_visual {
+        height: 23.5294em; /*400px*/
+    }
+    .sub_visual .sub_txt span {
+        font-size: 2rem; /*28px*/
+        padding: 6.7857em 0 0 0 ; /* 190px- 28px 기준으로 환산*/
+    }
+} /* @media */
+
+@media screen and (max-width:640px){  /*13px*/
+    .sub_visual {
+        height: 25.3846em; /*330px*/
+    }
+    .sub_visual .sub_txt span {
+        font-size: 1.9231rem; /*25px*/
+        padding: 7.2em 0 0 0 ; /*180px- 25px 기준으로 환산*/
+    }
+    .sub_visual .snb {
+        overflow-x: auto;
+        /* ul의 넓이가 snb보다 크면 - 메뉴가 한줄에 표시가 안될 것 같으면 가로 스크롤바 생성 */
+    }
+    
+} /* @media */
+
+.contents {
+    margin: 11.7647em 0 14.1176em 0; /*200px 0 240px 0*/
+}
+.page_tit {
+    margin: 0 0 2.3529em 0; /*00 40px 0*/
+}
+.page_tit .wrapper{ 
+    position: relative; /* breadcrumb의 정렬의 기준 */
+}
+.page_tit h1 {
+    font-size: 2.6471rem; /*45px*/
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.7111em;
+}
+.page_tit nav.breadcrumb {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 0;
+}
+.page_tit nav.breadcrumb ol {
+    display: flex;
+    gap: 1.4118em;
+}
+.page_tit nav.breadcrumb ol li a {
+    display: block;
+    position: relative; /* before, after 정렬의 기준 */
+    font-size: 0.8824em; /* 15px */
+    color: #454A51;
+}
+.page_tit nav.breadcrumb ol li + li a::before { /* 앞에 li 태그가 있는 li만 선택, 즉 두번째 li부터 */
+    content: "";
+    position: absolute;
+    left: -1.3333em;
+    top: 0.0667em;
+    width: 1.2em; /*18px*/
+    height: 1.2em;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.70977 9.00008L6.25977 5.55008L7.05008 4.75977L11.2904 9.00008L7.05008 13.2404L6.25977 12.4501L9.70977 9.00008Z' fill='%23454A51'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.page_tit nav.breadcrumb ol li.home a::after { /*집모양 아이콘*/
+    content: "";
+    position: absolute; /*a를 기준으로 정렬*/
+    left: -1.3em; /*17px*/
+    top: 0; 
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 14.2508H7.00969V9.79408H10.9903V14.2508H13.5V7.50077L9 4.11133L4.5 7.50077V14.2508ZM3.375 15.3758V6.93827L9 2.70508L14.625 6.93827V15.3758H9.86531V10.9191H8.13469V15.3758H3.375Z' fill='%23454A51'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.page_tit nav.breadcrumb ol li.curr a {
+    color: #1d1d1d;
+}
+.page_tit nav.breadcrumb ol li.curr a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.70977 9.00008L6.25977 5.55008L7.05008 4.75977L11.2904 9.00008L7.05008 13.2404L6.25977 12.4501L9.70977 9.00008Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+}
+
+
+@media screen and (max-width:1300px){ /*16px*/
+    .page_tit h1 {
+        font-size: 2.5rem; /*40px*/
+        margin-bottom: 0.7111em;
+    }
+} /* @media */
+
+@media screen and (max-width:1000px){ /*15px*/
+    .page_tit h1 {
+        font-size: 2.3333rem; /*35px*/
+        margin-bottom: 0.7111em;
+    }
+} /* @media */
+
+@media screen and (max-width:760px){ /*14px*/
+    .page_tit h1 {
+        font-size: 2rem; /*28px*/
+        margin-bottom: 0.7111em;
+    }
+} /* @media */
+
+@media screen and (max-width:640px){  /*13px*/
+    .contents {
+        margin: 7.6923em 0 9.2308em 0; /*100px 0 120px 0*/
+    }
+    .page_tit {
+        margin: 0 0 1.4118em 0; /*0 0 24px 0*/
+    }
+    .page_tit h1 {
+        font-size: 1.9231rem;  /*25px*/
+        margin-bottom: 0.7111em;
+    }
+    .page_tit nav.breadcrumb ol {
+        display: flex;
+        gap: 1.4118em;
+    }
+    .page_tit nav.breadcrumb ol li a {
+        font-size: 0.7692em; /*10px*/
+    }
+    .page_tit nav.breadcrumb ol li + li a::before { 
+        left: -1.3333em;
+        top: 0;
+        width: 1.2em; /*12px*/
+        height: 1.2em;
+    }
+    .page_tit nav.breadcrumb ol li.home a {
+        color: transparent;
+        white-space: nowrap;
+    }
+    .page_tit nav.breadcrumb ol li.home a::after { 
+        left: 1.7em; /*?px*/
+        top: 0; 
+        width: 1.2em; /*12px*/
+        height: 1.2em;
+    }
+} /* @media */
+
+
+/****news 시작***** (pr04.html에 있는 news)*/
+.news {
+    margin: 0 0 0 0;
+}
+.news .tit strong {
+    font-weight: 700;
+    color: #CE0112;
+}
+.news .tit h2 {
+    font-size: 1.8rem; /*45px*/
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0.3778em 0 1.1111em 0; /*상단:17px 하단: 50px*/
+}
+.news .tit strong span {
+    position: relative;
+}
+.news .tit strong span::after { /*글자 우측상단에 꾸며주는 아이콘*/
+    content: "";
+    position: absolute;
+    right:-11px;
+    top: -3px;
+    width: 0.5882em; /*10px*/
+    height: 0.5882em; /*10px*/
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.97329C1 5.11152 1.02011 5.25476 1.07541 5.39047C1.31925 5.99363 1.94017 6.36558 2.72951 6.05143C2.91805 5.97604 8.13927 3.87253 8.13927 3.87253C8.13927 3.87253 6.08295 9.08481 6.00502 9.27832C5.70588 10.0247 6.06536 10.7008 6.67622 10.9269C6.81196 10.9772 6.95274 11.0023 7.091 10.9998C7.59125 10.9973 8.03117 10.7033 8.24736 10.1152C8.28004 10.0272 10.8517 2.9678 10.907 2.79942C10.9397 2.69889 11 2.46265 11 2.2993C11 1.94997 10.8718 1.62075 10.6229 1.37195C10.3791 1.12566 10.0523 1 9.70789 1C9.53947 1 9.40372 1.03016 9.19759 1.0955C9.07441 1.13571 2.44545 3.60111 1.87984 3.81222C1.31423 4.02332 0.999999 4.47569 1.00251 4.97329' fill='%23CE0112'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.news .list {
+    padding-top: 2px;
+}
+.news .list ul li {
+    width: 100%;
+}
+.news .list ul li a {
+    display: flex;
+    border-top: 1px solid #454A51;
+    position: relative; /*before의 정렬의 기준*/
+}
+.news .list ul li a::before { /*마우스 오버하면 빨간 선 그어주는 효과*/
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 0;
+    height: 4px;
+    background-color: #CE0112;
+    /*transition: 0.5s; width: 100%; 얘랑 세트인데 이렇게 코딩하면 역실행을 무조건 하기 떄문에 그것을 없애려고 애니메이션으로 효과를 줌*/
+}
+.news .list ul li a .date {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0.7143em 0 0.4857em 0;
+}
+.news .list ul li a h3 {
+    font-size: 1.5rem;
+    line-height: 1.2; /*두줄 제한*/
+    height: 2.4em;
+    overflow: hidden;
+}
+.news .list ul li a p {
+    margin: 1em 0 1.1765em 0;
+    line-height: 1.4; /*두줄 제한*/
+    height: 2.8em;
+    overflow: hidden;
+}
+.news .list ul li a .photo {
+    overflow: hidden;
+    height: 11.7647em;
+}
+.news .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/*a에 마우스를 오버했을 때*/
+.news .list ul li a:hover::before {
+    /*width: 100%; */
+    animation-name: news_ani;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; /*마지막 유지*/
+    
+}
+@keyframes news_ani {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+.news .list ul li a:hover h3 {
+    font-weight: 600;
+}
+.news .list ul li a:hover .photo img {
+    transform: scale3d(1.1,1.1,1);
+}
+
+@media screen and (max-width:1000px){ /*모바일버전 -1000px이하*/
+    .news {
+        margin-top: 6em;
+    }
+    .news .tit h2 {
+        font-size: 1.9231rem; /*25px*/
+        margin: 6px 0 0 0;
+    }
+    .news .tit strong span::after { /*글자 우측상단에 꾸며주는 아이콘*/
+        right:-11px;
+        top: -3px;
+    }
+    .news .list {
+        margin-top: 2.9412em; /*50px*/
+    }
+    .news .list ul li a .date {
+        font-size: 1.5333rem; /*23px 15px기준*/
+        margin: 0.7143em 0 0.4857em 0;
+    }
+    .news .list ul li a h3 {
+        font-size: 1.5333rem;
+    }
+    .news .list ul li a p {
+        margin: 0.6667em 0;
+    }
+} /* @media */
