@@ -318,12 +318,20 @@ body {
     font-family: '116watermelon';
     line-height: 1; 
     letter-spacing: 0;
+    position: relative; /*p의 기준*/
 }
 .index .title h1 {
     font-size: 10em;
 }
 .index .title strong {
     font-size: 5em;
+}
+.index .title p {
+    font-size: 2.3em;
+    color: #555;
+    position: absolute;
+    left: 0;
+    bottom: 3%;
 }
 .index ul li {
     width: 100%;
@@ -347,7 +355,18 @@ body {
 .index ul li a.proj02:hover {
     background-color: #57820D;
 }
-
+.index ul li a.proj03:hover {
+    background-color: #CE0112;
+}
+.index ul li a.proj04:hover {
+    background-color: #003C79;
+}
+.index ul li a.proj05:hover {
+    background-color: #0F1921;
+}
+.index ul li a.proj06:hover {
+    background-color: #F9B82A;
+}
 
 .assemble {
     padding: 9em 0;
