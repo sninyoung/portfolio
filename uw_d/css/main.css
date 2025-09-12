@@ -359,12 +359,15 @@ body {
     background-color: #CE0112;
 }
 .index ul li a.proj04:hover {
-    background-color: #003C79;
+    background-color: #3F3114;
 }
 .index ul li a.proj05:hover {
-    background-color: #0F1921;
+    background-color: #003C79;
 }
 .index ul li a.proj06:hover {
+    background-color: #0F1921;
+}
+.index ul li a.proj07:hover {
     background-color: #F9B82A;
 }
 
