@@ -647,7 +647,7 @@ footer .f_actions::before {
     left: -100px;
     transform: translateX(-50%);
     bottom: -25px;
-    width: 3000px;
+    width: 5000px;
     border: 1px solid #F6F9EC;
 }
 footer .f_actions ul {
@@ -687,24 +687,75 @@ footer .f_actions ul li a {
     border-radius: 15px;
 }
 footer .inner {
-    padding: 80px 0 125px 0;
+    position: relative;
+    margin: 80px 0 0 0;
 }
 footer .inner h2 {
     display: none;
 }
 footer .inner .f_nav ul {
     display: flex;
-    justify-content: space-between;
+    gap: 42px;
+    margin-bottom : 24px;
+}
+footer .inner .f_nav ul li {
+    position: relative;
+}
+footer .inner .f_nav ul li::before {
+    position: absolute;
+    content: "";
+    width: 4px;   /* 동그라미 크기 */
+    height: 4px;
+    background-color: #F6F9EC; /* 동그라미 색상 */
+    border-radius: 50%; /* 완전 동그라미 */
+    top: 50%;  /* 세로 중앙 */
+    right: -22px; /* 가로 중앙  */
+    transform: translateY(-50%);
+}
+footer .inner .f_nav ul li:last-child::before {
+    display: none;
 }
 footer .inner .f_nav ul li:first-child {
     color: #517D21;
 }
-footer .inner .f_info {
-    text-align: left;
+footer .inner .f_area {
+    display: flex;
+    justify-content: start;
 }
-footer .inner .f_info .copyright {
+.f_logo a {
+    display: block;                     /* 블록 요소로 설정 */
+    width: 171px;                       /* 로고 가로 크기 */
+    height: 45px;                       /* 로고 세로 크기 */
+    color: transparent;                 /* 텍스트 색상 투명 */
+    text-decoration: none;              /* 링크 밑줄 제거 */
+    background: url(../images/main/f_logo.png) no-repeat center/contain; /* 로고 이미지 적용 */ 
+    
+    background-size: 100%;
+}
+footer .inner .f_area .f_info {
+    text-align: left;
+    margin-left : 45px;
+}
+footer .inner .f_area .f_info .copyright {
     color: rgba(246, 249, 236, 0.5);
     margin-top: 55px;
+}
+footer .inner .sns {
+    position: absolute;
+    top: 48px;
+    right: -100px;
+    color: rgba(246, 249, 236, 0.8);
+}
+footer .inner .sns ul li {
+    width: 135px;                      
+    height: 36px;
+    border: 1px solid rgba(246, 249, 236, 0.8); /* 선 색상 F6F9EC, 80% 투명도 */
+    border-radius: 15px; /* 모서리 둥글게 */
+}
+footer .inner .sns ul li a {
+    display: block;
+    text-align: center; 
+    line-height: 36px; /* li 높이와 동일하게 */
 }
 
 /**모바일**/
